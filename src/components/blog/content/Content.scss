@@ -1,0 +1,163 @@
+.apl-blog-content-detail {
+    @include margin-set(40px, 0, 40px, 0);
+
+    &-tags {
+        position: relative;
+        display: block;
+
+        &-list {
+            display: inline-block;
+            border-radius: 6px;
+            background-color: #000000;
+            @include margin-set(0, 8px, 0, 0);
+            @include padding-set(8px, 8px, 8px, 8px);
+            
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
+                @include font-set(12px, $typography-weight-semibold, 20px);
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &-meta {
+        @include flex-set(flex, space-between, null);
+        @include margin-set(0, 0, 32px, 0);
+
+        &-author {
+            text-decoration: none;
+            @include font-set(14px, $typography-weight-regular, 22px);
+
+            span:last-child {
+                color: #979797;
+
+                .apl-blog-content-detail-meta-author-separator {
+                    display: none;
+                }
+            }
+            
+            &-separator {
+                color: #979797;
+                @include margin-set(0, 8px, 0, 8px);
+            }
+            
+            &-title {
+                color: #979797;
+                text-decoration: none;
+            }
+        }
+
+        &-share {
+            @include flex-set(flex, null, null);
+            @include font-set(14px, $typography-weight-regular, 22px);
+
+            button {
+                @include margin-set(0, 8px, 0, 0);
+                @include font-set(14px, $typography-weight-regular, 22px);
+                @include flex-set(inline-flex, null, center);
+
+                span {
+                    @include margin-set(0, 0, 0, 8px);
+                }
+            }
+
+            &-separator {
+                color: #979797;
+                @include margin-set(0, 8px, 0, 8px);
+            }
+
+            &-title {
+                color: #979797;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-body {
+        @include margin-set(0, 0, 48px, 0);
+
+        h3 {
+            @include font-set(24px, $typography-weight-bold, 32px);
+        }
+
+        .wp-block-image {
+            margin: 24px 0;
+        }
+        
+        img {
+            width: 100%;
+        }
+
+        ul {
+            list-style: unset;
+        }
+
+        ul, ol {
+            @include padding-set(0, 0, 0, 24px);
+            
+            li {
+                @include padding-set(0, 0, 8px, 0);
+            }
+        }
+        
+        p {
+            @include margin-set(24px, 0, 24px, 0);
+            @include font-set(14px, $typography-weight-regular, 22px);
+        }
+    }
+    
+    h1 {
+        @include margin-set(20px, 0, 40px, 0);
+        @include font-set(36px, $typography-weight-bold, 48px);
+    }
+
+    @include touch {
+        @include margin-set(24px, 0, 24px, 0);
+
+        &-tags {
+            &-list {
+                @include padding-set(6px, 6px, 6px, 6px);
+                
+                a {
+                    @include font-set(10px, $typography-weight-semibold, 18px);
+                }
+            }
+        }
+        
+        &-meta {
+            display: block;
+
+            &-author {
+                border-bottom: 1px solid #C4C4C4;
+                @include padding-set(0, 0, 20px, 0);
+                @include margin-set(0, 0, 20px, 0);
+                @include font-set(12px, $typography-weight-regular, 20px);
+            }
+
+            &-share {
+                @include font-set(12px, $typography-weight-regular, 20px);
+
+                button {
+                    @include margin-set(0, 8px, 0, 0);
+                }
+            }
+        }
+
+        &-body {
+            @include margin-set(0, 0, 24px, 0);
+
+            h3 {
+                @include font-set(18px, $typography-weight-bold, 26px);
+            }
+        }
+        
+        h1 {
+            @include margin-set(20px, 0, 10px, 0);
+            @include font-set(18px, $typography-weight-bold, 26px);
+        }
+    }
+}

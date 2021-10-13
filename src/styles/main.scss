@@ -1,0 +1,64 @@
+/* Set SCSS Bulma */
+@import 'bulma/sass/utilities/_all';
+@import 'bulma/sass/grid/_all';
+@import 'bulma/sass/elements/_all';
+@import 'bulma/sass/components/_all';
+@import 'bulma/sass/form/_all';
+@import 'bulma/sass/layout/_all';
+
+/* Set SCSS Component */
+@import '../components/topbar/Topbar';
+@import '../components/footbar/Footbar';
+@import '../components/slide/Slide';
+@import '../components/service/Service';
+@import '../components/download/Download';
+@import '../components/testimonial/Testimonial';
+@import '../components/statistic/Statistic';
+@import '../components/statistic-slide/StatisticSlide';
+@import '../components/media/Media';
+@import '../components/jumbotron/Jumbotron';
+@import '../components/ads/Ads';
+@import '../components/join-accordion/JoinAccordion';
+@import '../components/qna-accordion/QnaAccordion';
+@import '../components/faq-accordion/FaqAccordion';
+@import '../components/benefit/Benefit';
+@import '../components/values/Values';
+@import '../components/join/Join';
+@import '../components/form/Form';
+@import '../components/contact-form/ContactForm';
+@import '../components/map/Map';
+@import '../components/community/Community';
+@import '../components/channel/Channel';
+@import '../components/contact/Contact';
+@import '../components/apply/Apply';
+@import '../components/brand-distributor/BrandDistributor';
+@import '../components/social-impact-collaborator/SocialImpactCollaborator';
+@import '../components/social-impact-report/SocialImpactReport';
+@import '../components/leadership/Leadership';
+@import '../components/investor/Investor';
+@import '../components/timeline/Timeline';
+@import '../components/feature/Feature';
+@import '../components/ecosystem/Ecosystem';
+@import '../components/modular/Modular';
+@import '../components/partner/Partner';
+@import '../components/market/Market';
+@import '../components/campaign/Campaign';
+@import '../components/block-text/BlockText';
+@import '../components/blog/banner/Banner';
+@import '../components/blog/thumbnail/Thumbnail';
+@import '../components/blog/paginate/Paginate';
+@import '../components/blog/page-header/PageHeader';
+@import '../components/blog/content/Content';
+
+// bantuan pintar
+@import '../components/benefit-smart-help/BenefitSmartHelp.scss';
+@import '../components/covid-respond/CovidRespond.scss';
+@import '../components/economy-recovery/EconomyRecovery.scss';
+@import '../components/business-assistance/BusinessAssistance.scss';
+
+// bizzy connect
+@import '../components/build-distributor/BuildDistributor.scss';
+@import '../components/business-model/BusinessModel.scss';
+@import '../components/business-ecosystem/BusinessEcosystem.scss';
+@import '../components/bizzy-system/BizzySystem.scss';
+@import '../components/bizzy-feature/BizzyFeature.scss';

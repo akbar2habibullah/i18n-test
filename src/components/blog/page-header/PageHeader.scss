@@ -1,0 +1,41 @@
+.apl-blog-page-header {
+    &-breadcrumb {
+        text-decoration: none;
+        @include margin-set(0, 0, 40px, 0);
+        @include font-set(14px, $typography-weight-regular, 22px);
+
+        span:last-child {
+            a {
+                color: #000000;
+            }
+
+            .apl-blog-page-header-breadcrumb-separator {
+                display: none;
+            }
+        }
+        
+        &-separator {
+            color: #000000;
+            @include margin-set(0, 8px, 0, 8px);
+        }
+        
+        &-link {
+            a {
+                color: #979797;
+                text-decoration: none;
+            }
+        }
+    }
+    
+    h4 {
+        @include margin-set(0, 0, 40px, 0);
+        @include font-set(36px, $typography-weight-bold, 48px);
+    }
+
+    @include touch {
+        &-breadcrumb {
+            @include margin-set(0, 0, 24px, 0);
+            @include font-set(12px, $typography-weight-regular, 20px);
+        }
+    }
+}

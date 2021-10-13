@@ -1,0 +1,78 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-blocktext {
+    @include padding-set(180px, 0, 160px, 0);
+
+    h5 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, auto, 100px, auto);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+    
+    p {
+        color: $color-black;
+        @include font-set(16px, $typography-weight-regular, 22px);
+    }
+
+    ul {
+        padding-inline-start: 20px;
+
+        li {
+            margin: 16px 0px;
+            list-style: decimal;
+            color: $color-black;
+            @include font-set(16px, $typography-weight-regular, 22px);
+        }
+    }
+    
+    ol {
+        padding-inline-start: revert;
+
+        li {
+            list-style: upper-alpha;
+            color: $color-black;
+            @include font-set(16px, $typography-weight-regular, 22px);
+        }
+    }
+
+
+    @include touch {
+        @include padding-set(160px, 32px, 108px, 32px);
+
+        h5 {
+            @include margin-set(0, auto, 60px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        p {
+            @include font-set(14px, $typography-weight-regular, 20px);
+        }
+
+        ul {
+            padding-inline-start: 10px;
+
+            li {
+                margin: 14px 0px;
+                @include font-set(14px, $typography-weight-regular, 20px);
+            }
+        }
+        
+        ol {
+            padding-inline-start: revert;
+
+            li {
+                @include font-set(14px, $typography-weight-regular, 20px);
+            }
+        }
+    }
+}

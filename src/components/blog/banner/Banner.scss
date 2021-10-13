@@ -1,0 +1,40 @@
+.apl-blog-banner {
+    height: 300px;
+    z-index: 1000;
+    margin-top: 94px;
+    @include flex-set(flex, center, center);
+
+    &:after, &:before {
+        background-color: $color-grey-20 !important;
+        background-repeat: no-repeat !important;
+        background-position: 0% 0% !important;
+        background-size: cover !important;
+    }
+
+    .gatsby-image-wrapper {
+        width: 642px;
+    }
+
+    p {
+        width: 60%;
+        color: #FFFFFF;
+        @include margin-set(32px, 0, 0, 0);
+        @include font-set(28px, $typography-weight-regular, 34px);
+    }
+
+    @include touch {
+        height: auto;
+        @include padding-set(64px, 32px, 64px, 32px);
+        @include flex-set(flex, center, flex-start);
+
+        .gatsby-image-wrapper {
+            width: 294px;
+        }
+
+        p {
+            width: 100%;
+            @include margin-set(12px, 0, 0, 0);
+            @include font-set(18px, $typography-weight-regular, 26px);
+        }
+    }
+}

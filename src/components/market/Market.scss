@@ -1,0 +1,107 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-market {
+    text-align: center;
+    background-color: $color-white;
+    @include padding-set(100px, 0, 100px, 0);
+
+    h2 {
+        width: 820px;
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, auto, 58px, auto);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+
+    &--item {
+        @include margin-set(0, 0, 48px, 0);
+        @include flex-set(flex, center, center);
+
+        .gatsby-image-wrapper {
+            width: 50%;
+
+            div {
+                width: 88%;
+            }
+        }
+
+        &--meta {
+            width: 50%;
+
+            & h3 {
+                text-align: left;
+                text-transform: uppercase;
+                color: $color-black;
+                @include margin-set(0, 0, 32px, 0);
+                @include font-set(32px, $typography-weight-bold, 38px);
+            }
+            
+            & p {
+                width: 400px;
+                text-align: left;
+                color: $color-black;
+                @include margin-set(0, 0, 0, 0);
+                @include font-set(24px, $typography-weight-regular, 30px);
+            }
+        }
+
+        &.#{$ns}-market--item--reverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .#{$ns}-market--item:last-child {
+        @include margin-set(0, 0, 0, 0);
+    }
+
+    @include touch {
+        @include padding-set(64px, 32px, 64px, 32px);
+
+        h2 {
+            width: 100%;
+            @include margin-set(0, auto, 40px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+        
+        &--item {
+            flex-direction: column;
+            @include margin-set(0, 0, 34px, 0);
+            
+            .gatsby-image-wrapper {
+                width: 100%;
+                @include margin-set(0, auto, 24px, auto);
+
+                div {
+                    width: 100%;
+                }
+            }
+
+            &--meta {
+                width: 100%;
+
+                & h3 {
+                    @include margin-set(0, 0, 14px, 0);
+                    @include font-set(16px, $typography-weight-bold, 22px);
+                }
+                
+                & p {
+                    width: 100%;
+                    @include margin-set(0, 0, 0, 0);
+                    @include font-set(14px, $typography-weight-regular, 20px);
+                }
+            }
+
+            &.#{$ns}-market--item--reverse {
+                flex-direction: column;
+            }
+        }
+    }
+}

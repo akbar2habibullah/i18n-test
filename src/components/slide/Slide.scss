@@ -1,0 +1,291 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-slide {
+    position: relative;
+    @include margin-set(94px, 0, 0, 0);
+
+    &--item > div {
+        height: 720px;
+        background-size: cover;
+        @include flex-set(flex, flex-start, center);
+        &.center-bottom {
+            background-size: contain;
+        }
+    }
+
+    .container {
+        position: initial;
+    }
+
+    &--overlay {
+        width: 100%;
+        height: 800px;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        background: linear-gradient(90deg, #000000 6%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.168763) 0%) !important;
+        z-index: $zindex-10;
+    }
+
+    &--meta {
+        position: relative;
+        
+        h5 {
+            width: 624px;
+            color: $color-white;
+            @include margin-set(0, 0, 30px, 0);
+            @include font-set(50px, $typography-weight-semibold, 56px);
+            &.#{$ns}-slide--title--inverse {
+                width: 540px;
+                color: $color-black;
+                @include margin-set(0, 0, 30px, 0);
+                @include font-set(36px, $typography-weight-bold, 42px);
+            }
+        }
+
+        ul {
+            @include margin-set(0, 0, 50px, 0);
+
+            li {
+                position: relative;
+                color: $color-white;
+                @include margin-set(0, 0, 0, 40px);
+                @include padding-set(0, 0, 0, 0);
+                @include font-set(28px, $typography-weight-bold, 34px);
+
+                &:before {
+                    content: '';
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='%23FECF28'/%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='2' y='2' width='20' height='20'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3C/g%3E%3C/svg%3E%0A");
+                    @include size-set(24px, 24px);
+                    @include position-set(absolute, 0, null, null, -40px);
+                }
+            }
+        }
+
+        p {
+            width: 500px;
+            text-transform: uppercase;
+            color: $color-white;
+            @include margin-set(0, 0, 30px, 0);
+            @include font-set(28px, $typography-weight-semibold, 34px);
+        }
+
+        h1 {
+            text-transform: none;
+            color: $color-white;
+            @include margin-set(0, 0, 30px, 0);
+            @include font-set(28px, $typography-weight-semibold, 34px);
+        }
+
+        & .large-content h1 {
+            @include font-set(45px, $typography-weight-semibold, 54px);
+            max-width: 440px;
+        }
+
+        a {
+            border-radius: 10px;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-black;
+            background-color: $color-primary-20;
+            @include padding-set(16px, 24px, 16px, 24px);
+            @include font-set(18px, $typography-weight-semibold, 24px);
+        }
+
+        &.#{$ns}-slide--meta--variation {
+            h5 {
+                text-transform: uppercase;
+                color: $color-primary-20;
+                @include font-set(50px, $typography-weight-bold, 56px);
+            }
+
+            p {
+                width: 620px;
+                text-transform: none;
+            }
+        }
+    }
+
+    &--logo {
+        width: 630px;
+        position: relative;
+        left: -60px;
+
+        &.logo-slim {
+            width: 250px;
+            left: 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    @include widescreen-only {
+        &--item > div {
+            background-position: center;
+        }
+    }
+
+    @include desktop-only {
+        &--item > div {
+            background-position: center;
+        }
+    }
+
+    @include touch {
+        @include margin-set(96px, 0, 0, 0);
+
+        &--item > div {
+            height: 100%;
+            display: block;
+            background-image: none !important;
+        }
+
+        &--overlay {
+            background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.168763) 0%) !important;
+        }
+
+        &--meta {
+            background-color: $color-black;
+            @include padding-set(56px, 32px, 56px, 32px);
+
+            h5 {
+                width: 100%;
+                @include margin-set(0, 0, 24px, 0);
+                @include font-set(22px, $typography-weight-semibold, 28px);
+
+                &.#{$ns}-slide--title--inverse {
+                    width: 100%;
+                    color: $color-white;
+                    @include margin-set(0, 0, 24px, 0);
+                    @include font-set(22px, $typography-weight-semibold, 28px);
+                }
+
+                &.yellow-title {
+                    @include font-set(38px, $typography-weight-bold, 40px);
+                    color: $color-primary-20;
+                    text-transform: uppercase;
+                    @include margin-set(15px, 0, 35px, 0);
+                    letter-spacing: 0.5px;
+                }
+            }
+
+            ul {
+                @include margin-set(0, 0, 24px, 0);
+
+                li {
+                    @include margin-set(0, 0, 4px, 32px);
+                    @include font-set(16px, $typography-weight-bold, 22px);
+
+                    &:before {
+                        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='%23FECF28'/%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='2' y='2' width='20' height='20'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3C/g%3E%3C/svg%3E%0A");
+                        @include size-set(20px, 20px);
+                        @include position-set(absolute, 0, null, null, -32px);
+                    }
+                }
+            }
+
+            p {
+                width: 100%;
+                @include margin-set(0, 0, 24px, 0);
+                @include font-set(16px, $typography-weight-bold, 22px);
+            }
+
+            a {
+                @include padding-set(16px, 16px, 16px, 16px);
+                @include font-set(16px, $typography-weight-semibold, 18px);
+            }
+
+            &.#{$ns}-slide--meta--variation {
+                h5 {
+                    @include font-set(22px, $typography-weight-semibold, 28px);
+                }
+
+                p {
+                    width: 100%;
+                }
+            }
+            & h1 {
+                @include font-set(28px, $typography-weight-semibold, 45px);
+            }
+
+            & .large-content h1 {
+                @include font-set(32px, $typography-weight-semibold, 45px);
+            }
+        }
+    }
+
+    @include mobile {
+        &--overlay {
+            background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.168763) 0%) !important;
+        }
+
+        &--meta {
+            h5 {
+                @include font-set(22px, $typography-weight-semibold, 28px);
+
+                &.yellow-title {
+                    @include font-set(24px, $typography-weight-bold, 30px);
+                    color: $color-primary-20;
+                    text-transform: uppercase;
+                    @include margin-set(0, 0, 25px, 0);
+                }
+            }
+
+            ul {
+                @include margin-set(0, 0, 24px, 0);
+
+                li {
+                    @include margin-set(0, 0, 0, 24px);
+                    @include font-set(14px, $typography-weight-bold, 20px);
+
+                    &:before {
+                        background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='%23FECF28'/%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='2' y='2' width='20' height='20'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3C/g%3E%3C/svg%3E%0A");
+                        @include size-set(14px, 14px);
+                        @include position-set(absolute, 0, null, null, -24px);
+                    }
+                }
+            }
+
+            p {
+                @include font-set(14px, $typography-weight-bold, 20px);
+            }
+
+            a {
+                @include padding-set(16px, 16px, 16px, 16px);
+                @include font-set(12px, $typography-weight-semibold, 18px);
+            }
+
+            img {
+                width: 190px;
+            }
+
+            & h1 {
+                @include font-set(16px, $typography-weight-semibold, 18px);
+            }
+            & .large-content h1 {
+                @include font-set(18px, $typography-weight-semibold, 21px);
+                max-width: 250px;
+            }
+        }
+
+        &--logo {
+            width: 320px;
+            left: -30px;
+            
+            &.logo-slim {
+                width: 136px;
+                left: 0;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,183 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-apply {
+    height: 600px;
+    @include flex-set(flex, center, center);
+
+    &:after, &:before {
+        background-color: $color-grey-20 !important;
+        background-repeat: no-repeat !important;
+        background-position: 90% 100% !important;
+        background-size: 760px auto !important;
+    }
+
+    &.#{$ns}-apply--fixed {
+        &:after, &:before {
+            background-color: $color-grey-20 !important;
+            background-repeat: no-repeat !important;
+            background-position: 100% 100% !important;
+            background-size: 1400px auto !important;
+        }
+    }
+
+    h2 {
+        width: 50%;
+        text-transform: uppercase;
+        color: $color-white;
+        @include margin-set(0, 0, 64px, 0);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+
+    p {
+        width: 30%;
+        color: $color-white;
+        @include margin-set(0, 0, 48px, 0);
+        @include font-set(24px, $typography-weight-medium, 30px);
+    }
+
+    &.#{$ns}-apply--compact {
+        &:after, &:before {
+            background-color: $color-grey-20 !important;
+            background-repeat: no-repeat !important;
+            background-position: 80% 50% !important;
+            background-size: 680px auto !important;
+        }
+
+        h2 {
+            width: 30%;
+            @include margin-set(0, 0, 14px, 0);
+        }
+
+        p {
+            width: 30%;
+            @include margin-set(0, 0, 48px, 0);
+        }
+    }
+
+    &--button--primary {
+        border-radius: 10px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        background-color: $color-primary-20;
+        @include margin-set(0, 0, 24px, 0);
+        @include padding-set(16px, 24px, 16px, 24px);
+        @include font-set(18px, $typography-weight-semibold, 24px);
+    }
+
+    &--button--secondary {
+        border: 1px solid;
+        border-radius: 10px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-color: $color-white;
+        color: $color-white;
+        @include margin-set(0, 0, 24px, 0);
+        @include padding-set(16px, 24px, 16px, 24px);
+        @include font-set(16px, $typography-weight-semibold, 22px);
+    }
+
+    @include widescreen-only {
+        &:after, &:before {
+            background-size: 760px auto !important;
+        }
+    }
+
+    @include desktop-only {
+        &:after, &:before {
+            background-size: 530px auto !important;
+        }
+
+        h2 {
+            width: 100%;
+        }
+
+        p {
+            width: 60%;
+        }
+    }
+
+    @include tablet-only {
+        &:after, &:before {
+            background-size: 530px auto !important;
+        }
+    }
+
+    @include touch {
+        height: 630px;
+        @include padding-set(64px, 32px, 64px, 32px);
+        @include flex-set(flex, center, flex-start);
+
+        &:after, &:before {
+            background-size: 390px auto !important;
+            background-position: 50% 100% !important;
+        }
+
+        &.#{$ns}-apply--fixed {
+            &:after, &:before {
+                background-position: 100% 100% !important;
+                background-size: 840px auto !important;
+            }
+        }
+
+        & .gatsby-image-wrapper {
+            width: 200px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+
+        h2 {
+            width: 100%;
+            text-align: center;
+            @include margin-set(0, auto, 32px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+            @include margin-set(0, 0, 48px, 0);
+            @include font-set(16px, $typography-weight-medium, 22px);
+        }
+
+        &.#{$ns}-apply--compact {
+            &:after, &:before {
+                background-position: 50% 96% !important;
+                background-size: 440px auto !important;
+            }
+
+            h2 {
+                width: 100%;
+                @include margin-set(0, 0, 24px, 0);
+            }
+
+            p {
+                width: 100%;
+                @include margin-set(0, 0, 24px, 0);
+            }
+        }
+        
+        &--button--primary {
+            display: table;
+            @include margin-set(0, auto, 16px, auto);
+            @include padding-set(16px, 42px, 16px, 42px);
+            @include font-set(12px, $typography-weight-semibold, 18px);
+        }
+        
+        &--button--secondary {
+            display: table;
+            @include margin-set(0, auto, 24px, auto);
+            @include padding-set(16px, 42px, 16px, 42px);
+            @include font-set(12px, $typography-weight-semibold, 18px);
+        }
+    }
+}

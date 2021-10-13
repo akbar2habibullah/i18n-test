@@ -1,0 +1,152 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-bizzy-system {
+    text-align: center;
+    @include padding-set(100px, 0, 100px, 0);
+    background-color: $color-primary-20;
+
+    h2 {
+        text-transform: uppercase;
+        color: $color-black;
+        max-width: 1051px;
+        @include margin-set(0, auto, 60px, auto);
+        @include font-set(45px, $typography-weight-bold, 49px);
+
+        &:before {
+            content: '';
+            display: block;
+            height: 136px;
+            margin: -136px 0 0;
+        }
+    }
+
+    &--item {
+        & .button-container {
+            margin-top: 40px;
+
+            & button {
+                @include font-set(18px, $typography-weight-bold, 24px);
+                text-transform: uppercase;
+                @include margin-set(0, 13px, 0, 13px);
+                @include padding-set(20px, 30px, 20px, 30px);
+                border-radius: 10px;
+                cursor: pointer;
+                background-color: $color-primary-10;
+
+                &.other-system {
+                    background-color: white;
+                }
+
+                &.bizzy-system {
+                    background-color: $color-blue-30;
+                    color: white;
+                }
+            }
+        }
+
+        &--mobile {
+            & .gatsby-image-wrapper.slide-image {
+                width: auto;
+                margin: 0 10px;
+            }
+        }
+
+        & .slick-dots {
+            bottom: -42px;
+        }
+
+        & .slick-dots li {
+            opacity: 1 !important;
+            padding: 0 !important;
+            border-radius: 8px !important;
+            background-color: $color-white !important;
+            @include size-set(12px, 12px);
+            @include margin-set(0, 4px, 0, 0);
+
+            & button:before {
+                content: '' !important;
+            }
+        }
+
+        & .slick-dots li.slick-active {
+            opacity: 1 !important;
+            padding: 0 !important;
+            border-radius: 8px !important;
+            background-color: $color-black !important;
+            @include size-set(12px, 12px);
+
+            & button:before {
+                content: '' !important;
+            }
+        }
+    }
+
+    @include desktop-only {
+        h2 {
+            max-width: 800px;
+            @include margin-set(0, auto, 60px, auto);
+            @include font-set(35px, $typography-weight-bold, 40px);
+        }
+
+        &--item {
+            & .button-container {
+                & button {
+                    @include font-set(14px, $typography-weight-bold, 20px);
+                    text-transform: uppercase;
+                    @include margin-set(0, 13px, 0, 13px);
+                    @include padding-set(15px, 25px, 15px, 25px);
+                }
+            }
+        }
+    }
+
+    @include tablet-only {
+        @include padding-set(64px, 0, 64px, 0);
+
+        h2 {
+            max-width: 600px;
+            @include margin-set(0, auto, 60px, auto);
+            @include font-set(25px, $typography-weight-bold, 35px);
+        }
+
+        &--item {
+            & .button-container {
+                & button {
+                    @include font-set(12px, $typography-weight-bold, 20px);
+                    text-transform: uppercase;
+                    @include margin-set(0, 13px, 0, 13px);
+                    @include padding-set(10px, 20px, 10px, 20px);
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        @include padding-set(64px, 0, 100px, 0);
+
+        h2 {
+            @include padding-set(0, 32px, 0, 32px);
+            @include margin-set(0, auto, 60px, auto);
+            @include font-set(20px, $typography-weight-bold, 22px);
+        }
+
+        &--item {
+            & .button-container {
+                & button {
+                    text-transform: uppercase;
+                    @include font-set(12px, $typography-weight-bold, 20px);
+                    @include margin-set(0, 13px, 0, 13px);
+                    @include padding-set(10px, 20px, 10px, 20px);
+                }
+            }
+        }
+    }
+}

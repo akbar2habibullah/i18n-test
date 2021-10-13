@@ -1,0 +1,195 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-footbar {
+    background-color: $color-black;
+    @include padding-set(52px, 32px, 52px, 32px);
+
+    &--brand {
+        .gatsby-image-wrapper {
+            width: 180px;
+        }
+    }
+
+    &--list {
+        flex-wrap: wrap;
+        @include flex-set(flex, space-between, flex-start);
+        @include margin-set(56px, 0, 0, 0);
+        
+        ul {
+            flex: 1 auto;
+            @include margin-set(0, 0, 0, 0);
+
+            h5 {
+                color: $color-white;
+                @include margin-set(0, 0, 16px, 0);
+                @include font-set(18px, $typography-weight-bold, 24px);
+            }
+
+            h6 {
+                color: $color-white;
+                @include margin-set(0, 0, 16px, 0);
+                @include font-set(16px, $typography-weight-bold, 22px);
+            }
+
+            li {
+                @include margin-set(0, 0, 16px, 0);
+
+                a {
+                    text-decoration: none;
+                    color: $color-white;
+                    @include font-set(16px, $typography-weight-medium, 22px);
+                }
+
+                p {
+                    width: 270px;
+                    color: $color-white;
+                    @include margin-set(0, 0, 0, 0);
+                    @include font-set(16px, $typography-weight-medium, 22px);
+                }
+            }
+
+            &:nth-child(3) {
+                flex: 3 auto;
+            }
+        }
+    }
+
+    &--copyright {
+        @include flex-set(flex, space-between, flex-end);
+        @include margin-set(24px, 0, 0, 0);
+
+        ul {
+            flex: 1 auto;
+            display: flex;
+            @include margin-set(0, 0, 0, 0);
+
+            p {
+                color: $color-white;
+                @include margin-set(0, 0, 0, 0);
+                @include font-set(14px, $typography-weight-bold, 20px);
+            }
+
+            li {
+                @include margin-set(0, 24px, 0, 0);
+
+                img {
+                    width: 38px;
+                }
+            }
+
+            &:nth-child(1) {
+                flex: 8 auto;
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--list {
+            ul {
+                @include margin-set(0, 32px, 32px, 0);
+
+                &:nth-child(3) {
+                    flex: auto;
+                }
+            }
+        }
+    }
+
+    @include touch {
+        &--brand {
+            text-align: center;
+        }
+        
+        &--list {
+            text-align: center;
+            flex-direction: column-reverse;
+            align-items: center;
+            @include margin-set(32px, 0, 0, 0);
+
+            ul {
+                h6 {
+                    @include font-set(20px, $typography-weight-bold, 26px);
+                }
+
+                li {
+                    @include margin-set(0, 0, 24px, 0);
+                    
+                    a {
+                        @include font-set(14px, $typography-weight-medium, 20px);
+                    }
+                    
+                    p {
+                        width: 100%;
+                        @include margin-set(0, auto, 0, auto);
+                        @include font-set(14px, $typography-weight-medium, 20px);
+                    }
+                }
+
+                &:nth-child(3) {
+                    @include margin-set(0, auto, 0, auto);
+                }
+            }
+        }
+
+        &--copyright {
+            align-items: center;
+            flex-direction: column-reverse;
+
+            ul {
+                p {
+                    text-align: center;
+                    @include margin-set(32px, auto, 0, auto);
+                    @include font-set(14px, $typography-weight-medium, 20px);
+                }
+
+                div {
+                    li {
+                        img {
+                            width: 36px;
+                        }
+                        
+                        &:last-child {
+                            @include margin-set(0, 0, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &--list {
+            ul {
+                h6 {
+                    @include font-set(16px, $typography-weight-bold, 22px);
+                }
+
+                li {
+                    a {
+                        @include font-set(12px, $typography-weight-medium, 18px);
+                    }
+                    
+                    p {
+                        @include font-set(12px, $typography-weight-medium, 18px);
+                    }
+                }
+            }
+        }
+
+        &--copyright {
+            ul {
+                p {
+                    @include font-set(12px, $typography-weight-regular, 18px);
+                }
+            }
+        }
+    }
+}

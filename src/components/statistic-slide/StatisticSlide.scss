@@ -1,0 +1,797 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-statisticslide {
+    background-color: $color-grey-20;
+    @include padding-set(100px, 0, 100px, 0);
+
+    &--header {
+        & h2 {
+            text-align: center;
+            text-transform: uppercase;
+            color: $color-primary-20;
+            @include margin-set(0, auto, 40px, auto);
+            @include font-set(42px, $typography-weight-bold, 48px);
+        }
+        
+        & h3 {
+            width: 980px;
+            text-align: center;
+            color: $color-white;
+            @include margin-set(0, auto, 100px, auto);
+            @include font-set(28px, $typography-weight-medium, 34px);
+        }
+    }
+
+    &--item1 {
+        height: 230px;
+        border-radius: 20px;
+        flex-direction: column;
+        position: relative;
+        background-color: $color-primary-30;
+        @include flex-set(flex, center, flex-start);
+        @include margin-set(0, 0, 4px, 0);
+        @include padding-set(32px, 64px, 32px, 64px);
+        
+        &--fit {
+            @include padding-set(32px, 32px, 32px, 32px);
+        }
+
+        & h6 {
+            text-transform: uppercase;
+            color: $color-black;
+            z-index: $zindex-20;
+            @include margin-set(0, 0, 0, 0);
+            @include font-set(100px, $typography-weight-bold, 106px);
+        }
+        
+        &.#{$ns}-statisticslide--item1--fit h6 {
+            @include font-set(42px, $typography-weight-bold, 48px);
+        }
+        
+        & p {
+            text-align: left;
+            color: $color-black;
+            z-index: $zindex-20;
+            @include margin-set(0, 0, 0, 0);
+            @include font-set(28px, $typography-weight-bold, 34px);
+        }
+
+        &.#{$ns}-statisticslide--item1--fit p {
+            @include font-set(28px, $typography-weight-bold, 34px);
+        }
+    }
+
+    &--item2 {
+        @include margin-set(0, 24px, 0, 24px);
+        
+        &--card {
+            position: relative;
+            border-radius: 20px;
+            background-color: $color-primary-30;
+            @include padding-set(24px, 24px, 24px, 24px);
+
+            & h4 {
+                text-align: center;
+                text-transform: uppercase;
+                color: $color-black;
+                @include margin-set(0, auto, 32px, auto);
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+            
+            &--inside {
+                position: relative;
+                flex-direction: column;
+                border-radius: 20px;
+                background-color: $color-primary-10;
+                @include flex-set(flex, center, center);
+                @include padding-set(24px, 24px, 24px, 24px);
+
+                &--offset {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                & h5 {
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: $color-black;
+                    @include margin-set(0, auto, 4px, auto);
+                    @include font-set(60px, $typography-weight-bold, 66px);
+                    
+                    b {
+                        @include font-set(36px, $typography-weight-bold, 42px);
+                    }
+                    
+                }
+
+                & h3 {
+                    text-align: center;
+                    color: $color-black;
+                    @include margin-set(0, auto, 4px, auto);
+                    @include font-set(36px, $typography-weight-bold, 42px);
+                }
+                
+                & h6 {
+                    width: 180px;
+                    text-align: center;
+                    color: $color-black;
+                    @include margin-set(0, 20px, 0, 20px);
+                    @include font-set(18px, $typography-weight-bold, 24px);
+                }
+                
+                strong {
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: $color-black;
+                    @include margin-set(0, auto, 8px, auto);
+                    @include font-set(28px, $typography-weight-bold, 34px);
+                }
+            }
+
+            &--nospace {
+                @include padding-set(24px, 8px, 24px, 8px);
+            }
+
+            &--direction {
+                flex-direction: row;
+            }
+
+            &--direction {
+                justify-content: flex-start;
+            }
+            
+            &--fit {
+                width: 60% !important;
+            }
+
+            &--fitfull {
+                width: 100% !important;
+            }
+
+            &--full {
+                height: 788px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 100% 100%;
+                z-index: 110;
+                position: relative;
+            }
+
+            &--quarter {
+                @include margin-set(0, 0, 24px, 0);
+            }
+        }
+    }
+
+    & .slick-dots li {
+        opacity: 1 !important;
+        padding: 0 !important;
+        border-radius: 12px !important;
+        background-color: $color-white !important;
+        @include size-set(12px, 12px);
+        @include margin-set(0, 4px, 0, 0);
+
+        & button:before {
+            content: '' !important;
+        }
+    }
+
+    & .slick-dots li.slick-active {
+        opacity: 1 !important;
+        padding: 0 !important;
+        border-radius: 12px !important;
+        background-color: $color-primary-20 !important;
+        @include size-set(20px, 12px);
+
+        & button:before {
+            content: '' !important;
+        }
+    }
+    
+    & .slick-next, & .slick-prev {
+        border-radius: 48px !important;
+        z-index: $zindex-20 !important;
+        background-color: $color-primary-20 !important;
+        @include size-set(42px, 42px);
+    }
+
+    & .slick-next:before, & .slick-prev:before {
+        opacity: 1 !important;
+        font-size: 24px !important;
+        line-height: 0.60 !important;
+        color: $color-black !important;
+    }
+
+    & .slick-prev {
+        top: 40px !important;
+        left: 40px !important;
+        transform: rotate(0deg) !important;
+        
+        &:before {
+            content: '' !important;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='7) Icon/2) Outline//arrow-right'%3E%3Cpath id='&%23240;&%23159;&%23142;&%23168; Icon &%23208;&%23161;olor' fill-rule='evenodd' clip-rule='evenodd' d='M19 13H7.135L10.768 17.36C11.122 17.784 11.064 18.415 10.64 18.768C10.215 19.122 9.585 19.064 9.231 18.64L4.231 12.64C4.192 12.593 4.173 12.538 4.144 12.486C4.12 12.444 4.091 12.408 4.073 12.362C4.028 12.247 4.001 12.126 4.001 12.004C4.001 12.003 4 12.001 4 12C4 11.999 4.001 11.997 4.001 11.996C4.001 11.874 4.028 11.753 4.073 11.638C4.091 11.592 4.12 11.556 4.144 11.514C4.173 11.462 4.192 11.407 4.231 11.36L9.231 5.36C9.43 5.123 9.714 5 10 5C10.226 5 10.453 5.076 10.64 5.232C11.064 5.585 11.122 6.216 10.768 6.64L7.135 11H19C19.552 11 20 11.448 20 12C20 12.552 19.552 13 19 13Z' fill='%23000000'/%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='4' y='5' width='16' height='14'%3E%3Cpath id='&%23240;&%23159;&%23142;&%23168; Icon &%23208;&%23161;olor_2' fill-rule='evenodd' clip-rule='evenodd' d='M19 13H7.135L10.768 17.36C11.122 17.784 11.064 18.415 10.64 18.768C10.215 19.122 9.585 19.064 9.231 18.64L4.231 12.64C4.192 12.593 4.173 12.538 4.144 12.486C4.12 12.444 4.091 12.408 4.073 12.362C4.028 12.247 4.001 12.126 4.001 12.004C4.001 12.003 4 12.001 4 12C4 11.999 4.001 11.997 4.001 11.996C4.001 11.874 4.028 11.753 4.073 11.638C4.091 11.592 4.12 11.556 4.144 11.514C4.173 11.462 4.192 11.407 4.231 11.36L9.231 5.36C9.43 5.123 9.714 5 10 5C10.226 5 10.453 5.076 10.64 5.232C11.064 5.585 11.122 6.216 10.768 6.64L7.135 11H19C19.552 11 20 11.448 20 12C20 12.552 19.552 13 19 13Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+            @include size-set(24px, 24px);
+            @include position-set(absolute, 9px, 9px, null, null);
+        }
+    }
+
+    & .slick-next {
+        top: 40px !important;
+        right: 40px !important;
+        transform: rotate(180deg) !important;
+
+        &:before {
+            content: '' !important;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='7) Icon/2) Outline//arrow-right'%3E%3Cpath id='&%23240;&%23159;&%23142;&%23168; Icon &%23208;&%23161;olor' fill-rule='evenodd' clip-rule='evenodd' d='M19 13H7.135L10.768 17.36C11.122 17.784 11.064 18.415 10.64 18.768C10.215 19.122 9.585 19.064 9.231 18.64L4.231 12.64C4.192 12.593 4.173 12.538 4.144 12.486C4.12 12.444 4.091 12.408 4.073 12.362C4.028 12.247 4.001 12.126 4.001 12.004C4.001 12.003 4 12.001 4 12C4 11.999 4.001 11.997 4.001 11.996C4.001 11.874 4.028 11.753 4.073 11.638C4.091 11.592 4.12 11.556 4.144 11.514C4.173 11.462 4.192 11.407 4.231 11.36L9.231 5.36C9.43 5.123 9.714 5 10 5C10.226 5 10.453 5.076 10.64 5.232C11.064 5.585 11.122 6.216 10.768 6.64L7.135 11H19C19.552 11 20 11.448 20 12C20 12.552 19.552 13 19 13Z' fill='%23000000'/%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='4' y='5' width='16' height='14'%3E%3Cpath id='&%23240;&%23159;&%23142;&%23168; Icon &%23208;&%23161;olor_2' fill-rule='evenodd' clip-rule='evenodd' d='M19 13H7.135L10.768 17.36C11.122 17.784 11.064 18.415 10.64 18.768C10.215 19.122 9.585 19.064 9.231 18.64L4.231 12.64C4.192 12.593 4.173 12.538 4.144 12.486C4.12 12.444 4.091 12.408 4.073 12.362C4.028 12.247 4.001 12.126 4.001 12.004C4.001 12.003 4 12.001 4 12C4 11.999 4.001 11.997 4.001 11.996C4.001 11.874 4.028 11.753 4.073 11.638C4.091 11.592 4.12 11.556 4.144 11.514C4.173 11.462 4.192 11.407 4.231 11.36L9.231 5.36C9.43 5.123 9.714 5 10 5C10.226 5 10.453 5.076 10.64 5.232C11.064 5.585 11.122 6.216 10.768 6.64L7.135 11H19C19.552 11 20 11.448 20 12C20 12.552 19.552 13 19 13Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+            @include size-set(24px, 24px);
+            @include position-set(absolute, 9px, 9px, null, null);
+        }
+    }
+
+    & .slick-dots {
+        display: none !important;
+    }
+
+    @include desktop-only {
+        &--item1 {
+            @include padding-set(32px, 64px, 32px, 64px);
+
+            & h6 {
+                @include font-set(70px, $typography-weight-bold, 76px);
+            }
+            
+            & p {
+                @include font-set(22px, $typography-weight-bold, 28px);
+            }
+
+            &.#{$ns}-statisticslide--item1--fit p {
+                width: 100%;
+                @include font-set(22px, $typography-weight-bold, 28px);
+            }
+        }
+
+        &--item2 {
+            &--card {
+                @include padding-set(32px, 32px, 32px, 32px);
+                
+                & h4 {
+                    @include margin-set(0, auto, 24px, auto);
+                    @include font-set(20px, $typography-weight-bold, 26px);
+                }
+                
+                &--inside {
+                    height: 230px;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    @include margin-set(0, 0, 32px, 0);
+                    @include padding-set(32px, 32px, 32px, 32px);
+                    
+                    & h5 {
+                        @include margin-set(0, 0, 0, 0);
+                        @include font-set(34px, $typography-weight-bold, 40px);
+                        
+                    }
+                    
+                    & h3 {
+                        @include font-set(24px, $typography-weight-bold, 32px);
+                    }
+                    
+                    & h6 {
+                        text-align: left;
+                        width: 70%;
+                        @include margin-set(0, 0, 0, 0);
+                        @include font-set(24px, $typography-weight-bold, 30px);
+                    }
+                    
+                    strong {
+                        @include font-set(28px, $typography-weight-bold, 34px);
+                    }
+                }
+
+                &--direction {
+                    justify-content: center;
+                }
+
+                &--full {
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    @include tablet-only {
+        @include padding-set(60px, 32px, 60px, 32px);
+
+        &--header {
+            & h5 {
+                width: 100%;
+                @include margin-set(0, auto, 30px, auto);
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+
+            & h6 {
+                width: 100%;
+                @include margin-set(0, auto, 60px, auto);
+                @include font-set(18px, $typography-weight-medium, 24px);
+            }
+        }
+
+        &--item1 {
+            height: 140px;
+            @include padding-set(16px, 32px, 16px, 32px);
+
+            & h6 {
+                @include font-set(54px, $typography-weight-bold, 60px);
+            }
+
+            & p {
+                @include font-set(18px, $typography-weight-bold, 24px);
+            }
+
+            &.#{$ns}-statisticslide--item1--fit p {
+                width: 100%;
+                @include font-set(18px, $typography-weight-bold, 24px);
+            }
+        }
+
+        &--item2 {
+            &--card {
+                @include padding-set(24px, 24px, 24px, 24px);
+                
+                & h4 {
+                    @include margin-set(0, auto, 24px, auto);
+                    @include font-set(20px, $typography-weight-bold, 26px);
+                }
+                
+                &--inside {
+                    height: 140px;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    @include margin-set(0, 0, 24px, 0);
+                    @include padding-set(24px, 24px, 24px, 24px);
+                    
+                    & h5 {
+                        @include margin-set(0, 0, 0, 0);
+                        @include font-set(24px, $typography-weight-bold, 30px);
+                        
+                    }
+                    
+                    & h6 {
+                        text-align: left;
+                        width: 60%;
+                        @include margin-set(0, 0, 0, 0);
+                        @include font-set(18px, $typography-weight-bold, 24px);
+                    }
+                }
+
+                &--direction {
+                    justify-content: center;
+                }
+
+                &--full {
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        @include padding-set(60px, 0, 60px, 0);
+
+        &--header {
+            @include margin-set(0, 32px, 0, 32px);
+
+            & h5 {
+                width: 100%;
+                @include margin-set(0, auto, 24px, auto);
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+
+            & h6 {
+                width: 100%;
+                margin-bottom: 24px !important;
+                @include font-set(16px, $typography-weight-bold, 22px);
+            }
+        }
+
+        .is-multiline {
+            @include margin-set(0, 32px, 0, 32px);
+            
+            .column {
+                @include padding-set(0.75rem , 0, 0.75rem , 0);
+            }
+        }
+
+        &--item1 {
+            height: 90px;
+            width: 350px;
+            border-radius: 10px;
+            @include margin-set(0, auto, 0, auto);
+            @include padding-set(4px, 16px, 4px, 16px);
+
+            & h6 {
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+            
+            &.#{$ns}-statisticslide--item1--fit h6 {
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+            
+            & p {
+                width: 60%;
+                @include font-set(14px, $typography-weight-bold, 20px);
+            }
+
+            &.#{$ns}-statisticslide--item1--fit p {
+                width: 100%;
+                @include font-set(14px, $typography-weight-bold, 20px);
+            }
+        }
+
+        &--item2 {
+            width: 350px;
+            border-radius: 10px;
+            @include margin-set(0, auto, 0, auto);
+
+            &--card {
+                @include padding-set(16px, 16px, 16px, 16px);
+                
+                & h4 {
+                    @include margin-set(0, auto, 16px, auto);
+                    @include font-set(20px, $typography-weight-bold, 26px);
+                }
+                
+                &--inside {
+                    height: auto;
+                    display: block;
+                    @include margin-set(0, 0, 16px, 0);
+                    @include padding-set(16px, 16px, 16px, 16px);
+
+                    &:last-child {
+                        @include margin-set(0, 0, 0, 0);
+                    }
+                    
+                    & h5 {
+                        text-align: left;
+                        @include margin-set(0, 0, 16px, 0);
+                        @include font-set(16px, $typography-weight-bold, 20px);
+                        
+                    }
+                    
+                    & h6 {
+                        text-align: left;
+                        width: 60%;
+                        @include margin-set(0, 0, 0, 0);
+                        @include font-set(12px, $typography-weight-bold, 18px);
+                    }
+                }
+
+                &--direction {
+                    justify-content: center;
+                }
+
+                &--full {
+                    height: auto;
+                }
+            }
+        }
+
+        & .slick-next, & .slick-prev {
+            display: none !important;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        &--item1 {
+            width: auto;
+        }
+
+        &--item2 {
+            width: auto;
+        }
+    }
+}
+
+.#{$ns}-statisticslide {
+    &--item1 {
+        & .gatsby-image-wrapper.statistic-image-01 {
+            position: absolute !important;
+            bottom: 0;
+            right: 4px;
+            width: 565px;
+        }
+
+        & .gatsby-image-wrapper.statistic-image-02 {
+            position: absolute !important;
+            bottom: 0;
+            right: 24px;
+            width: 341px;
+        }
+
+        & .gatsby-image-wrapper.statistic-image-03 {
+            position: absolute !important;
+            bottom: 0;
+            right: 0;
+            width: 244px;
+        }
+
+        & .gatsby-image-wrapper.statistic-image-04 {
+            position: absolute !important;
+            bottom: 0;
+            right: 24px;
+            width: 504px;
+        }
+
+        & .gatsby-image-wrapper.statistic-image-05 {
+            position: absolute !important;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+        }
+    }
+
+    &--item2--card {
+        & .gatsby-image-wrapper.milestone-image-01 {
+            position: absolute !important;
+            bottom: 0;
+            right: 0;
+            width: 290px;
+        }
+
+        & .gatsby-image-wrapper.milestone-image-02 {
+            position: absolute !important;
+            bottom: 32px;
+            right: -10px;
+            width: 160px;
+        }
+
+        & .gatsby-image-wrapper.milestone-image-03 {
+            position: absolute !important;
+            bottom: 10px;
+            right: 0;
+            width: 286px;
+        }
+
+        & .gatsby-image-wrapper.milestone-image-04 {
+            position: absolute !important;
+            top: -20px;
+            left: -7px;
+            width: 160px;
+        }
+    }
+
+    @include widescreen-only {
+        &--item2--card {
+            & .gatsby-image-wrapper.milestone-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                right: 0;
+                width: 250px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-02 {
+                position: absolute !important;
+                bottom: 32px;
+                right: -10px;
+                width: 150px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-03 {
+                position: absolute !important;
+                bottom: 10px;
+                right: 0;
+                width: 250px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-04 {
+                position: absolute !important;
+                top: -8px;
+                left: -14px;
+                width: 140px;
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--item1 {
+            & .gatsby-image-wrapper.statistic-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                width: 500px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                width: 300px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-03 {
+                position: absolute !important;
+                bottom: 0;
+                width: 244px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-04 {
+                position: absolute !important;
+                bottom: 0;
+                width: 504px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-05 {
+                position: absolute !important;
+                bottom: 0;
+                width: 300px;
+            }
+        }
+
+        &--item2--card {
+            & .gatsby-image-wrapper.milestone-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                right: 0;
+                width: 280px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                right: 20px;
+                width: 230px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-03 {
+                position: absolute !important;
+                bottom: -20px;
+                right: 0;
+                width: 280px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-04 {
+                position: absolute !important;
+                top: 30px;
+                left: 590px;
+                width: 280px;
+            }
+        }
+    }
+
+    @include tablet-only {
+        &--item1 {
+            & .gatsby-image-wrapper.statistic-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                width: 325px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                width: 200px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-03 {
+                position: absolute !important;
+                bottom: 0;
+                width: 180px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-04 {
+                position: absolute !important;
+                bottom: 0;
+                width: 304px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-05 {
+                position: absolute !important;
+                bottom: 0;
+                width: 182px;
+            }
+        }
+
+        &--item2--card {
+            & .gatsby-image-wrapper.milestone-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                right: 0;
+                width: 230px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                right: 20px;
+                width: 180px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-03 {
+                position: absolute !important;
+                bottom: -20px;
+                right: 0;
+                width: 230px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-04 {
+                position: absolute !important;
+                top: -20px;
+                left: auto;
+                right: -20px;
+                width: 230px;
+            }
+        }
+    }
+
+    @include mobile {
+        &--item1 {
+            & .gatsby-image-wrapper.statistic-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                width: 150px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                width: 114px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-03 {
+                position: absolute !important;
+                bottom: 0;
+                width: 120px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-04 {
+                position: absolute !important;
+                bottom: 0;
+                width: 200px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-05 {
+                position: absolute !important;
+                bottom: 0;
+                width: 120px;
+            }
+        }
+
+        &--item2--card {
+            & .gatsby-image-wrapper.milestone-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                right: 0;
+                width: 125px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                right: 10px;
+                width: 110px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-03 {
+                position: absolute !important;
+                bottom: 0px;
+                right: 0;
+                width: 130px;
+            }
+
+            & .gatsby-image-wrapper.milestone-image-04 {
+                position: absolute !important;
+                top: 30px;
+                left: auto;
+                right: -10px;
+                width: 130px;
+            }
+        }
+    }
+}

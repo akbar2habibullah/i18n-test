@@ -1,0 +1,214 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.contactform-section {
+    &:before {
+        content: '' !important;
+        display: block !important;
+        height: 136px !important;
+        margin: -136px 0 0 !important;
+    }
+}
+
+.#{$ns}-contactform {
+    height: 840px;
+    @include flex-set(flex, flex-end, center);
+
+    &:after,
+    &:before {
+        background-color: $color-grey-20 !important;
+        background-repeat: no-repeat !important;
+        background-position: 100% 50% !important;
+        background-size: 640px auto !important;
+    }
+
+    &--wrapper {
+        @include flex-set(flex, flex-start, null);
+    }
+
+    &--card {
+        width: 50%;
+        flex-direction: column;
+        @include flex-set(flex, null, null);
+        @include margin-set(0, 32px, 0, 0);
+
+        & h2 {
+            &.max-content {
+                width: max-content;
+            }
+            text-transform: uppercase;
+            color: $color-white;
+            @include margin-set(0, 0, 32px, 0);
+            @include font-set(45px, $typography-weight-bold, 52px);
+        }
+
+        & h3 {
+            width: 600px;
+            color: $color-white;
+            @include margin-set(0, 0, 32px, 0);
+            @include font-set(24px, $typography-weight-medium, 30px);
+        }
+
+        & .field-body > .field:not(:last-child) {
+            margin-right: 24px;
+        }
+
+        & .field {
+            @include margin-set(0, 0, 24px, 0);
+
+            &.is-grouped {
+                justify-content: space-between;
+            }
+
+            .label {
+                color: $color-white;
+                @include font-set(16px, $typography-weight-bold, 22px);
+            }
+
+            p {
+                @include margin-set(0, 0, 0, 0);
+                @include font-set(16px, $typography-weight-bold, 22px);
+
+                a {
+                    color: $color-black;
+                    text-decoration: none;
+                }
+            }
+
+            button {
+                cursor: pointer;
+                border-radius: 10px;
+                display: block;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $color-black;
+                background-color: $color-primary-20;
+                @include margin-set(0, 0, 24px, 0);
+                @include padding-set(16px, 48px, 16px, 48px);
+                @include font-set(16px, $typography-weight-semibold, 22px);
+
+                &:disabled {
+                    cursor: not-allowed;
+                    background-color: $color-primary-10;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1441px) {
+        &:after,
+        &:before {
+            background-size: 680px auto !important;
+        }
+
+        &--card {
+            width: 50%;
+        }
+    }
+
+    @include widescreen-only {
+        &:after,
+        &:before {
+            background-size: 620px auto !important;
+        }
+    }
+
+    @include desktop-only {
+        &:after,
+        &:before {
+            background-size: 520px auto !important;
+        }
+
+        &--card {
+            width: 50%;
+            & h2.max-content {
+                width: auto;
+            }
+        }
+    }
+
+    @include touch {
+        height: 970px;
+        @include flex-set(flex, flex-end, flex-start);
+        @include padding-set(64px, 32px, 64px, 32px);
+
+        &:after,
+        &:before {
+            background-size: 270px auto !important;
+            background-position: 100% 100% !important;
+        }
+
+        &--card {
+            width: 100%;
+            @include margin-set(0, 0, 0, 0);
+
+            & h2 {
+                &.max-content{
+                    width: 100%
+                }
+                width: 100%;
+                text-align: center;
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+
+            & h3 {
+                width: 100%;
+                text-align: center;
+                @include font-set(16px, $typography-weight-medium, 22px);
+            }
+
+            & .field-body > .field:not(:last-child) {
+                margin-right: 0;
+            }
+
+            & .field {
+                .label {
+                    @include font-set(14px, $typography-weight-regular, 20px);
+                }
+
+                .control input {
+                    &::-webkit-input-placeholder {
+                        @include font-set(14px, $typography-weight-regular, 20px);
+                    }
+                    &::-moz-placeholder {
+                        @include font-set(14px, $typography-weight-regular, 20px);
+                    }
+                    &:-ms-input-placeholder {
+                        @include font-set(14px, $typography-weight-regular, 20px);
+                    }
+                    &:-moz-placeholder {
+                        @include font-set(14px, $typography-weight-regular, 20px);
+                    }
+                }
+
+                p {
+                    @include font-set(14px, $typography-weight-bold, 20px);
+                }
+
+                button {
+                    @include margin-set(0, auto, 0, auto);
+                    @include padding-set(16px, 64px, 16px, 64px);
+                    @include font-set(12px, $typography-weight-semibold, 18px);
+                }
+            }
+        }
+    }
+
+    @include tablet-only {
+        &:after,
+        &:before {
+            background-size: 480px auto !important;
+        }
+
+        & .field-body > .field:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+ @import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-investor {
+    position: relative;
+    background-color: $color-grey-40;
+    @include padding-set(0, 0, 64px, 0);
+    
+    &--wrapper {
+        border-top: 2px dashed;
+        border-color: $color-black;
+    }
+    
+    h5 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(96px, auto, 32px, auto);
+        @include font-set(32px, $typography-weight-bold, 40px);
+    }
+
+    h6 {
+        text-align: center;
+        color: $color-black;
+        @include margin-set(0, auto, 20px, auto);
+        @include font-set(24px, $typography-weight-medium, 30px);
+    }
+
+    &--icon {
+        flex-wrap: wrap;
+        @include flex-set(flex, center, center);
+        @include margin-set(64px, 0, 0, 0);
+
+        a {
+            transition: filter .3s;
+            filter: grayscale(100%);
+            
+            &:hover, &:active {
+                filter: grayscale(0%);
+            }
+            
+            .gatsby-image-wrapper {
+                width: 100%;
+                @include margin-set(0, 40px, 40px, 0);
+            }
+        }
+    }
+
+    @include touch {
+        @include padding-set(0, 32px, 64px, 32px);
+
+        h5 {
+            @include margin-set(48px, auto, 0, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        &--icon {
+            @include margin-set(48px, 0, 0, 0);
+            
+            a .gatsby-image-wrapper {
+                width: 100%;
+                @include margin-set(0, 10px, 32px, 10px);
+            }
+        }
+    }
+}

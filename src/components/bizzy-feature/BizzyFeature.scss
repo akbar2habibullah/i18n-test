@@ -1,0 +1,244 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-bizzy-feature {
+    @include padding-set(100px, 0, 100px, 0);
+    background-color: $color-blue-40;
+    min-height: 1000px;
+    transition: max-height $animation-speed-slow;
+    color: white;
+
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        max-width: 1051px;
+        @include margin-set(0, auto, 60px, auto);
+        @include font-set(45px, $typography-weight-bold, 49px);
+        letter-spacing: 1.72px;
+
+        &:before {
+            content: '';
+            display: block;
+            height: 136px;
+            margin: -136px 0 0;
+        }
+    }
+
+    &--item {
+        & .text{
+            z-index: 1;
+            &.last{
+                padding-bottom: 35px !important;
+                border-bottom: 1px solid white;
+            }
+        }
+
+        & .header {
+            border-top: 1px solid white;
+            padding-top: 35px;
+            display: flex;
+            cursor: pointer;
+            justify-content: space-between;
+            position: relative;
+
+            & h3 {
+                text-transform: uppercase;
+                max-width: 450px;
+                @include font-set(24px, $typography-weight-bold, 30px);
+                letter-spacing: 1.72px;
+            }
+
+            & .arrow {
+                background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16.0612%207.93868C15.9247%207.8007%2015.7597%207.69122%2015.5782%207.61623C15.3967%207.53974%2015.2032%207.50074%2015.0082%207.50074C15.0052%207.50074%2015.0022%207.49924%2014.9992%207.49924C14.9452%207.49924%2014.9002%207.52324%2014.8462%207.52924C14.7082%207.54424%2014.5702%207.55924%2014.4397%207.61173C14.3362%207.65372%2014.2522%207.72421%2014.1607%207.7872C14.0962%207.8322%2014.0227%207.8577%2013.9642%207.91319L9.46425%2012.2056C8.86575%2012.7785%208.84325%2013.7264%209.41475%2014.3263C9.98775%2014.9262%2010.9357%2014.9472%2011.5357%2014.3758L13.4992%2012.5026L13.4992%2020.9974C13.4992%2021.8253%2014.1712%2022.4972%2014.9992%2022.4972C15.8287%2022.4972%2016.4992%2021.8253%2016.4992%2020.9974L16.4992%2012.6195L18.4387%2014.5588C18.7327%2014.8512%2019.1167%2014.9982%2019.4992%2014.9982C19.8832%2014.9982%2020.2672%2014.8512%2020.5612%2014.5588C21.1462%2013.9724%2021.1462%2013.023%2020.5612%2012.4381L16.0612%207.93868ZM15%2026.9958C8.3835%2026.9958%203%2021.6131%203%2014.9975C3%208.38187%208.3835%202.9991%2015%202.9991C21.6165%202.9991%2027%208.38187%2027%2014.9975C27%2021.6131%2021.6165%2026.9958%2015%2026.9958ZM15%20-0.000488281C6.729%20-0.000488281%20-1.59623e-10%206.7276%20-3.55825e-10%2014.9975C-5.52027e-10%2023.2674%206.729%2029.9954%2015%2029.9954C23.271%2029.9954%2030%2023.2674%2030%2014.9975C30%206.7276%2023.271%20-0.000488281%2015%20-0.000488281Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E');
+                transition: transform $animation-speed-slow;
+                background-repeat: no-repeat;
+                @include size-set(30px, 30px);
+
+                &-up {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        & .content {
+            transition: max-height $animation-speed-fast;
+            letter-spacing: 0.5px;
+            max-height: 0;
+            overflow: hidden;
+            @include font-set(18px, $typography-weight-regular, 22px);
+
+            &.is-collapse {
+                max-height: 100rem;
+                transition-timing-function: $animation-slight-resistance;
+                transition-duration: $animation-speed-slow;
+                transition-property: max-height;
+            }
+        }
+
+        & .image-container {
+            position: absolute;
+            right: 0;
+            top: 200px;
+
+            & .image-will-collapse{
+                max-height: 0;
+                overflow: hidden;
+                background-color: red;
+                transition: max-height $animation-speed-slow;
+                &.is-collapse{
+                    max-height: 100rem;
+                    transition-property: max-height;
+                    transition-duration: $animation-speed-fast;
+                }
+            }
+
+            & .gatsby-image-wrapper.feature-image {
+                width: 1000px;
+                height: 800px;
+                left: -50px;
+                max-height: 0;
+                overflow: hidden;
+                transition-duration: $animation-speed-slow;
+
+                &.is-collapse {
+                    transition-property: max-height;
+                    max-height: 100rem;
+                    transition-duration: $animation-speed-fast;
+                }
+            }
+        }
+    }
+
+    @include desktop-only {
+        h2 {
+            max-width: 800px;
+            @include margin-set(0, auto, 60px, auto);
+            @include font-set(35px, $typography-weight-bold, 40px);
+        }
+
+        &--item {
+            @include margin-set(0, 35px, 0, 35px);
+
+            & .header {
+                & h3 {
+                    max-width: 300px;
+                    @include font-set(20px, $typography-weight-bold, 26px);
+                    letter-spacing: 1.72px;
+                }
+            }
+
+            & .content {
+                @include font-set(16px, $typography-weight-regular, 22px);
+            }
+
+            & .image-container {
+                & .gatsby-image-wrapper.feature-image {
+                    left: -75px;
+                    width: 700px;
+                    height: auto;
+                }
+            }
+        }
+    }
+    @include tablet-only {
+        min-height: max-content;
+        
+        h2 {
+            max-width: 600px;
+            @include margin-set(0, auto, 60px, auto);
+            @include font-set(25px, $typography-weight-bold, 35px);
+        }
+
+        &--item {
+            @include padding-set(0, 35px, 0, 35px);
+
+            & .text{
+                &.last{
+                    padding-bottom: none;
+                    border-bottom: none;
+                }
+            }
+
+            & .header {
+                & h3 {
+                    @include font-set(20px, $typography-weight-bold, 26px);
+                    letter-spacing: 1.72px;
+                }
+            }
+
+            & .content {
+                @include font-set(16px, $typography-weight-regular, 22px);
+            }
+
+            & .image-container {
+                position: static;
+
+                &.last{
+                    border-bottom: 1px solid white;
+                }
+
+                & .gatsby-image-wrapper.feature-image {
+                    top: -50px;
+                    width: auto;
+                    left: 0;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        min-height: max-content;
+
+        h2 {
+            max-width: 600px;
+            @include padding-set(0, auto, 60px, auto);
+            @include font-set(25px, $typography-weight-bold, 35px);
+        }
+
+        &--item {
+            @include padding-set(0, 20px, 0, 20px);
+
+            & .text{
+                &.last{
+                    padding-bottom: none;
+                    border-bottom: none;
+                }
+            }
+
+            & .header {
+                & h3 {
+                    max-width: 250px;
+                    @include font-set(16px, $typography-weight-bold, 22px);
+                    letter-spacing: 1.72px;
+                }
+            }
+
+            & .content {
+                @include font-set(14px, $typography-weight-regular, 20px);
+            }
+
+            & .image-container {
+                position: static;
+
+                &.last{
+                    border-bottom: 1px solid white;
+                }
+                
+                & .gatsby-image-wrapper.feature-image {
+                    width: auto;
+                    top: -20px;
+                    left: 0;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+image: asia.gcr.io/warung-support/google-sdk:latest
+
+after_script:
+  - ls -la 
+
+variables:
+  REGISTRY_IMAGE: asia.gcr.io/warung-support
+  REGISTRY_IMAGEV2: asia.gcr.io/warung-support/wpg-website
+
+stages:
+  - build
+  - deploy
+
+before_script:
+  - mkdir -p $HOME/.docker
+  - echo "$DOCKER_AUTH_CONFIG" > "$HOME/.docker/config.json"
+
+
+Build Staging:
+  image:
+    name: gcr.io/kaniko-project/executor:debug-v0.16.0
+    entrypoint: [""]
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+  stage: build
+  before_script:
+    - mkdir -p /root/.docker
+    - echo "$DOCKER_AUTH_CONFIG" > /kaniko/.docker/config.json
+    - pwd
+  variables:
+     IMAGE_VERSION: latest
+     IMAGE_NAME: wpg-website
+  only:
+    - development
+  tags:
+    - gke
+  script:
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination ${REGISTRY_IMAGE}/${IMAGE_NAME}:${IMAGE_VERSION}
+
+
+# build_wpg_website_image:
+#   image: docker:latest
+#   cache:
+#     key: $CI_COMMIT_REF_SLUG
+#     paths:
+#       - .npm/
+#       - node_modules/
+#   stage: build
+#   variables:
+#     IMAGE_VERSION: latest
+#     IMAGE_NAME: wpg-website
+#   only:
+#     -  build-image-tuning
+#   tags:
+#     - gke
+#   script:
+#     - docker build -f Dockerfile -t ${REGISTRY_IMAGE}/${IMAGE_NAME}:${IMAGE_VERSION} .
+#     - docker push ${REGISTRY_IMAGE}/${IMAGE_NAME}:${IMAGE_VERSION}      
+    
+wpg_website_to_staging:
+  image: asia.gcr.io/warung-support/google-sdk:latest
+  stage: deploy
+  before_script:
+    - mkdir -p $HOME/.docker
+    - echo "$DOCKER_AUTH_CONFIG" > "$HOME/.docker/config.json"
+  variables:
+    ENV_STAGE: development
+    IMAGE_NAME: wpg-website
+    IMAGE_VERSION: latest
+  script:
+    # Authenticate with GKE
+    - echo $SERVICE_ACCOUNT_KEY > key.json
+    - gcloud auth activate-service-account --key-file=key.json
+    - gcloud config set project warung-development
+    - gcloud config set container/cluster ${GKE_STAGING}
+    - gcloud config set compute/zone asia-southeast1-b
+    - gcloud container clusters get-credentials ${GKE_STAGING} --zone asia-southeast1-b
+    # Do the deployment
+    - sed -ie "s/PIPELINE_NUMBER/$CI_PIPELINE_ID/g" ./app-deploy.yml
+    - cat ./app-deploy.yml | envsubst | kubectl apply -f -
+  environment:
+    name: development
+  only:
+    - development
+  tags:
+    - gke  
+
+build_wpg_image:
+  image: docker:latest
+  stage: build
+  variables:
+    IMAGE_VERSION: ${CI_COMMIT_REF_NAME}
+    ENV_STAGE: production
+    IMAGE_NAME: wpg-website
+  only:
+    - tags
+  script:
+    - docker build --no-cache -f ./packages/desktop-web/Dockerfile -t ${REGISTRY_IMAGE}/${IMAGE_NAME}-${ENV_STAGE}:${IMAGE_VERSION} .
+    - docker push ${REGISTRY_IMAGE}/${IMAGE_NAME}-${ENV_STAGE}:${IMAGE_VERSION}
+
+
+fourkey_metrics_deployment_count:
+  stage: deploy
+  environment: production
+  only:
+    - tags
+  tags:
+    - gke
+  when: manual
+  script:
+    - echo "deploy to production"
+

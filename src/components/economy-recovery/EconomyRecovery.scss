@@ -1,0 +1,151 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/radius';
+
+.#{$ns}-economy-recovery {
+    text-align: center;
+    border-top: 2px dashed black;
+    @include padding-set(90px, 0, 0, 0);
+    @include margin-set(100px, 0, 0, 0);
+
+    h2 {
+        @include font-set(40px, $typography-weight-bold, 48px);
+        color: $color-black;
+        letter-spacing: 1.72px;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+
+    p {
+        @include font-set(28px, $typography-weight-regular, 34px);
+        @include margin-set(54px, auto, 80px, auto);
+        letter-spacing: 0.5px;
+        max-width: 1049px;
+    }
+
+    &--item {
+        color: $color-white;
+
+        & > div {
+            background-size: cover;
+            background-position: center;
+            @include flex-set(flex, center, end);
+            overflow: hidden;
+            border-radius: 20px;
+            height: 630px;
+            @include margin-set(0, 10px, 0, 10px);
+        }
+
+        &--content {
+            padding: 20px 40px;
+
+            h3 {
+                @include font-set(36px, $typography-weight-bold, 42px);
+            }
+
+            div > p {
+                @include font-set(24px, $typography-weight-regular, 30px);
+                max-width: 500px;
+                @include margin-set(30px, auto, 30px, auto);
+            }
+        }
+    }
+
+    @include desktop-only {
+        h2 {
+            max-width: 850px;
+            @include font-set(36px, $typography-weight-bold, 44px);
+        }
+
+        p {
+            @include font-set(24px, $typography-weight-regular, 32px);
+            @include margin-set(38px, auto, 80px, auto);
+            max-width: 920px;
+        }
+
+        &--item {
+            &--content {
+                max-height: 250px;
+                padding: 20px 40px;
+
+                h3 {
+                    @include font-set(32px, $typography-weight-bold, 38px);
+                }
+
+                div > p {
+                    @include font-set(20px, $typography-weight-regular, 26px);
+                }
+            }
+        }
+    }
+
+    @include tablet-only {
+        h2 {
+            max-width: 650px;
+            @include font-set(30px, $typography-weight-bold, 40px);
+        }
+
+        p {
+            @include font-set(20px, $typography-weight-regular, 28px);
+            @include margin-set(30px, auto, 50px, auto);
+            max-width: 760px;
+        }
+
+        &--item {
+            &--content {
+                max-height: 240px;
+                padding: 20px 40px;
+                text-align: center;
+
+                h3 {
+                    @include font-set(28px, $typography-weight-bold, 34px);
+                }
+
+                div > p {
+                    @include font-set(18px, $typography-weight-regular, 24px);
+                    @include margin-set(30px, auto, 30px, auto);
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        h2 {
+            max-width: 320px;
+            @include font-set(24px, $typography-weight-bold, 26px);
+        }
+
+        p {
+            @include font-set(18px, $typography-weight-regular, 20px);
+            @include margin-set(28px, auto, 35px, auto);
+            max-width: 315px;
+        }
+        
+        &--item {
+            & > div {
+                background-size: cover;
+                background-position: inherit;
+                @include flex-set(flex, center, end);
+                overflow: hidden;
+                border-radius: 10px;
+                height: 380px;
+                @include margin-set(0, 10px, 0, 10px);
+            }
+
+            &--content {
+                text-align: center;
+                padding: 20px 40px;
+                h3 {
+                    @include font-set(16px, $typography-weight-bold, 20px);
+                }
+                div > p {
+                    @include font-set(12px, $typography-weight-regular, 14px);
+                    max-width: 280px;
+                    @include margin-set(10px, auto, 10px, auto);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,343 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-values {
+    text-align: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, $color-white, $color-white 50%, $color-primary-20 50%);
+    @include padding-set(100px, 0, 160px, 0);
+
+    h2 {
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, 0, 56px, 0);
+        @include font-set(42px, $typography-weight-bold, 48px);
+
+        &:before {
+            content: "";
+            display: block;
+            height: 136px;
+            margin: -136px 0 0;
+        }
+    }
+
+    p {
+        color: $color-black;
+        @include margin-set(0, 0, 84px, 0);
+        @include font-set(28px, $typography-weight-regular, 34px);
+    }
+
+    &--item {
+        @include margin-set(0, auto, 0, auto);
+
+        & h4 {
+            text-align: center;
+            text-transform: uppercase;
+            color: $color-black;
+            @include margin-set(0, auto, 24px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        & p {
+            width: 80%;
+            text-align: center;
+            color: $color-black;
+            @include margin-set(0, auto, 0, auto);
+            @include font-set(18px, $typography-weight-regular, 24px);
+        }
+    }
+
+    .slick-dots {
+        bottom: -60px !important;
+    }
+
+    & .slick-dots li {
+        opacity: 1 !important;
+        padding: 0 !important;
+        border-radius: 12px !important;
+        background-color: $color-white !important;
+        @include size-set(16px, 16px);
+        @include margin-set(0, 8px, 0, 0);
+
+        & button:before {
+            content: '' !important;
+        }
+    }
+
+    & .slick-dots li.slick-active {
+        opacity: 1 !important;
+        padding: 0 !important;
+        border-radius: 12px !important;
+        background-color: $color-black !important;
+        @include size-set(16px, 16px);
+
+        & button:before {
+            content: '' !important;
+        }
+    }
+
+    & .slick-next, & .slick-prev {
+        border-radius: 48px !important;
+        z-index: $zindex-20 !important;
+        background-color: $color-black !important;
+        @include size-set(42px, 42px);
+    }
+
+    & .slick-next:before, & .slick-prev:before {
+        opacity: 1 !important;
+        font-size: 24px !important;
+        line-height: 0.60 !important;
+        color: $color-primary-20 !important;
+    }
+
+    @include touch {
+        background-repeat: no-repeat;
+        background-image: linear-gradient(to bottom, $color-white, $color-white 50%, $color-primary-20 50%);
+        @include padding-set(0, 0, 0, 0);
+        
+        h2 {
+            @include margin-set(0, auto, 46px, auto);
+            @include padding-set(64px, 32px, 0, 32px);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        p {
+            @include margin-set(0, auto, 38px, auto);
+            @include padding-set(0, 32px, 0, 32px);
+            @include font-set(16px, $typography-weight-regular, 22px);
+        }
+
+        &--item {
+            height: 450px;
+
+            & h4 {
+                width: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                color: $color-black;
+                @include margin-set(0, auto, 24px, auto);
+                @include font-set(18px, $typography-weight-bold, 24px);
+            }
+            
+            & p {
+                width: 100%;
+                text-align: center;
+                color: $color-black;
+                @include padding-set(0, 32px, 0, 32px);
+                @include font-set(14px, $typography-weight-regular, 20px);
+            }
+        }
+
+        & .slick-dots {
+            bottom: 60px !important;
+        }
+        
+        & .slick-dots li {
+            opacity: 1 !important;
+            padding: 0 !important;
+            border-radius: 8px !important;
+            background-color: $color-white !important;
+            @include size-set(12px, 12px);
+            @include margin-set(0, 8px, 0, 0);
+
+            & button:before {
+                content: '' !important;
+            }
+        }
+
+        & .slick-dots li.slick-active {
+            opacity: 1 !important;
+            padding: 0 !important;
+            border-radius: 8px !important;
+            background-color: $color-black !important;
+            @include size-set(12px, 12px);
+
+            & button:before {
+                content: '' !important;
+            }
+        }
+    }
+
+    @include mobile {
+        &--item {
+            height: 400px;
+        }
+    }
+}
+
+.#{$ns}-values {
+    &--item {
+        & .gatsby-image-wrapper.values-image-01 {
+            width: 282px;
+            @include margin-set(0, auto, 34px, auto);
+        }
+
+        & .gatsby-image-wrapper.values-image-02 {
+            width: 263px;
+            @include margin-set(0, auto, 34px, auto);
+        }
+
+        & .gatsby-image-wrapper.values-image-03 {
+            width: 336px;
+            @include margin-set(0, auto, 34px, auto);
+        }
+
+        & .gatsby-image-wrapper.values-image-04 {
+            width: 240px;
+            @include margin-set(0, auto, 34px, auto);
+        }
+
+        & .gatsby-image-wrapper.values-image-05 {
+            width: 267px;
+            @include margin-set(0, auto, 54px, auto);
+        }
+        
+        & .gatsby-image-wrapper.values-image-06 {
+            width: 359px;
+            @include margin-set(0, auto, 54px, auto);
+        }
+    }
+
+    @include widescreen-only {
+        &--item {
+            & .gatsby-image-wrapper.values-image-01 {
+                width: 282px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-02 {
+                width: 263px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-03 {
+                width: 336px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-04 {
+                width: 240px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-05 {
+                width: 267px;
+                @include margin-set(0, auto, 54px, auto);
+            }
+            
+            & .gatsby-image-wrapper.values-image-06 {
+                width: 359px;
+                @include margin-set(0, auto, 54px, auto);
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--item {
+            & .gatsby-image-wrapper.values-image-01 {
+                width: 242px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-02 {
+                width: 223px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-03 {
+                width: 296px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-04 {
+                width: 200px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-05 {
+                width: 227px;
+                @include margin-set(0, auto, 54px, auto);
+            }
+            
+            & .gatsby-image-wrapper.values-image-06 {
+                width: 299px;
+                @include margin-set(0, auto, 54px, auto);
+            }
+        }
+    }
+
+    @include tablet-only {
+        &--item {
+            & .gatsby-image-wrapper.values-image-01 {
+                width: 212px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-02 {
+                width: 193px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-03 {
+                width: 266px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-04 {
+                width: 170px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-05 {
+                width: 197px;
+                @include margin-set(0, auto, 54px, auto);
+            }
+            
+            & .gatsby-image-wrapper.values-image-06 {
+                width: 269px;
+                @include margin-set(0, auto, 54px, auto);
+            }
+        }
+    }
+
+    @include mobile {
+        &--item {
+            & .gatsby-image-wrapper.values-image-01 {
+                width: 192px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-02 {
+                width: 173px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-03 {
+                width: 216px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-04 {
+                width: 150px;
+                @include margin-set(0, auto, 34px, auto);
+            }
+
+            & .gatsby-image-wrapper.values-image-05 {
+                width: 157px;
+                @include margin-set(0, auto, 44px, auto);
+            }
+            
+            & .gatsby-image-wrapper.values-image-06 {
+                width: 209px;
+                @include margin-set(0, auto, 54px, auto);
+            }
+        }
+    }
+}

@@ -1,0 +1,444 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-statistic {
+    text-align: center;
+    background-color: $color-grey-20;
+    @include padding-set(100px, 0, 100px, 0);
+
+    h2 {
+        width: 900px;
+        text-transform: uppercase;
+        color: $color-white;
+        @include margin-set(0, auto, 100px, auto);
+        @include font-set(42px, $typography-weight-bold, 48px);
+        &.is-yellow {
+            color: $color-primary-20;
+        }
+    }
+
+    &--item {
+        height: 230px;
+        border-radius: 20px;
+        flex-direction: column;
+        position: relative;
+        background-color: $color-primary-30;
+        @include flex-set(flex, center, flex-start);
+        @include margin-set(0, 0, 4px, 0);
+        @include padding-set(32px, 64px, 32px, 64px);
+
+        &--fit {
+            @include padding-set(32px, 32px, 32px, 32px);
+        }
+
+        & h5,h3 {
+            text-transform: uppercase;
+            color: $color-black;
+            z-index: $zindex-20;
+            @include margin-set(0, 0, 0, 0);
+            @include font-set(100px, $typography-weight-bold, 106px);
+        }
+
+        &.#{$ns}-statistic--item--fit h5 {
+            @include font-set(42px, $typography-weight-bold, 48px);
+        }
+
+        & p {
+            text-align: left;
+            color: $color-black;
+            z-index: $zindex-20;
+            @include margin-set(0, 0, 0, 0);
+            @include font-set(28px, $typography-weight-bold, 34px);
+        }
+
+        &.#{$ns}-statistic--item--fit p {
+            @include font-set(36px, $typography-weight-bold, 42px);
+        }
+
+        &--help-page {
+            & h3 {
+                text-transform: uppercase;
+                z-index: $zindex-20;
+                @include font-set(70px, $typography-weight-bold, 87px);
+            }
+            & p {
+                @include font-set(21px, $typography-weight-bold, 25px);
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--item {
+            @include padding-set(32px, 64px, 32px, 64px);
+
+            & h5,h3 {
+                @include font-set(70px, $typography-weight-bold, 76px);
+            }
+
+            &.#{$ns}-statistic--item--fit h5 {
+                @include font-set(70px, $typography-weight-bold, 76px);
+            }
+
+            & p {
+                @include font-set(22px, $typography-weight-bold, 28px);
+            }
+
+            &.#{$ns}-statistic--item--fit p {
+                width: 100%;
+                @include font-set(22px, $typography-weight-bold, 28px);
+            }
+            &--help-page {
+                & p {
+                    @include font-set(20px, $typography-weight-bold, 28px);
+                }
+            }
+        }
+    }
+
+    @include tablet-only {
+        @include padding-set(60px, 32px, 60px, 32px);
+
+        h2 {
+            width: 700px;
+            @include margin-set(0, auto, 60px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        &--item {
+            height: 140px;
+            @include padding-set(16px, 32px, 16px, 32px);
+
+            & h5,h3 {
+                @include font-set(54px, $typography-weight-bold, 60px);
+            }
+
+            & p {
+                @include font-set(18px, $typography-weight-bold, 24px);
+            }
+
+            &.#{$ns}-statistic--item--fit p {
+                width: 100%;
+                @include font-set(18px, $typography-weight-bold, 24px);
+            }
+
+            &--help-page {
+                min-height: 90px;
+                & h5,h3 {
+                    @include font-set(28px, $typography-weight-bold, 35px);
+                }
+
+                & p.is-hidden-until-widescreen {
+                    @include font-set(16px, $typography-weight-bold, 18px);
+                }
+
+                & p.is-description {
+                    @include font-set(14px, $typography-weight-regular, 18px);
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        @include padding-set(60px, 32px, 60px, 32px);
+
+        h2 {
+            width: 100%;
+            @include margin-set(0, auto, 60px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        &--item {
+            width: 350px;
+            height: 90px;
+            border-radius: 10px;
+            @include margin-set(0, auto, 0, auto);
+            @include padding-set(4px, 16px, 4px, 16px);
+
+            & h5,
+            h3 {
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+
+            &.#{$ns}-statistic--item--fit h5 {
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+
+            & p {
+                width: 60%;
+                @include font-set(14px, $typography-weight-bold, 20px);
+            }
+
+            &.#{$ns}-statistic--item--fit p {
+                width: 100%;
+                @include font-set(14px, $typography-weight-bold, 20px);
+            }
+
+            &--help-page {
+                height: auto;
+                min-height: 90px;
+                @include padding-set(4px, 20px, 4px, 20px);
+
+                & h5,h3 {
+                    @include font-set(28px, $typography-weight-bold, 35px);
+                    
+                    &.title-with-description {
+                        margin-top: 15px;
+                    }
+                }
+                & p.is-hidden-until-widescreen {
+                    @include font-set(12px, $typography-weight-bold, 18px);
+                }
+                & p.is-description {
+                    @include font-set(8px, $typography-weight-regular, 10px);
+                    @include padding-set(15px, 0, 38px, 0);
+                    max-width: 125px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        &--item {
+            width: auto;
+        }
+    }
+}
+
+.#{$ns}-statistic {
+    &--item {
+        & .gatsby-image-wrapper.statistic-image-01 {
+            position: absolute !important;
+            bottom: 0;
+            right: 24px;
+            width: 565px;
+        }
+
+        & .gatsby-image-wrapper.statistic-image-02 {
+            position: absolute !important;
+            bottom: 0;
+            right: 24px;
+            width: 341px;
+        }
+
+        & .gatsby-image-wrapper.statistic-image-03 {
+            position: absolute !important;
+            bottom: 0;
+            right: 0;
+            width: 244px;
+        }
+
+        & .gatsby-image-wrapper.statistic-image-04 {
+            position: absolute !important;
+            bottom: 0;
+            right: 24px;
+            width: 504px;
+        }
+
+        & .gatsby-image-wrapper.statistic-image-05 {
+            position: absolute !important;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+        }
+
+        &--help-page {
+            & .gatsby-image-wrapper.statistic-image-01 {
+                bottom: -12px;
+                height: 315px;
+            }
+            
+            & .gatsby-image-wrapper.statistic-image-02 {
+                right: 20px;
+                width: 381px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-03 {
+                right: 0;
+                width: 160px;
+                height: 230px;
+                @include border-radius-set('bottom', 0, 20px);
+                @include border-radius-set('top', 0, 20px);
+            }
+
+            & .gatsby-image-wrapper.statistic-image-05 {
+                right: 0;
+                height: 230px;
+                width: 350px;
+                @include border-radius-set('bottom', 0, 20px);
+                @include border-radius-set('top', 0, 20px);
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--item {
+            & .gatsby-image-wrapper.statistic-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                width: 500px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                width: 300px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-03 {
+                position: absolute !important;
+                bottom: 0;
+                width: 244px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-04 {
+                position: absolute !important;
+                bottom: 0;
+                width: 504px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-05 {
+                position: absolute !important;
+                width: 300px;
+            }
+
+            &--help-page {
+                & .gatsby-image-wrapper.statistic-image-01 {
+                    bottom: -10px;
+                    width: 430px;
+                    right: 0;
+                    height: 250px;
+                }
+
+                & .gatsby-image-wrapper.statistic-image-03 {
+                    width: 200px;
+                }
+
+                & .gatsby-image-wrapper.statistic-image-05 {
+                    height: 230px;
+                }
+            }
+        }
+    }
+
+    @include tablet-only {
+        &--item {
+            & .gatsby-image-wrapper.statistic-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                width: 325px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                width: 200px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-03 {
+                position: absolute !important;
+                bottom: 0;
+                width: 180px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-04 {
+                position: absolute !important;
+                bottom: 0;
+                width: 304px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-05 {
+                position: absolute !important;
+                bottom: 0;
+                width: 182px;
+            }
+
+            &--help-page {
+                & .gatsby-image-wrapper.statistic-image-01 {
+                    right: 0;
+                    height: 180px;
+                    bottom: -7px;
+                }
+
+                & .gatsby-image-wrapper.statistic-image-03 {
+                    height: 140px;
+                    width: 140px;
+                }
+
+                & .gatsby-image-wrapper.statistic-image-05 {
+                    height: 140px;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &--item {
+            & .gatsby-image-wrapper.statistic-image-01 {
+                position: absolute !important;
+                bottom: 0;
+                right: 4px;
+                width: 150px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-02 {
+                position: absolute !important;
+                bottom: 0;
+                width: 114px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-03 {
+                position: absolute !important;
+                bottom: 0;
+                width: 120px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-04 {
+                position: absolute !important;
+                bottom: 0;
+                width: 200px;
+            }
+
+            & .gatsby-image-wrapper.statistic-image-05 {
+                position: absolute !important;
+                bottom: 0;
+                width: 120px;
+            }
+
+            &--help-page {
+                & .gatsby-image-wrapper.statistic-image-01 {
+                    right: -28px;
+                    bottom: -4.5px;
+                    height: auto;
+                    width: 230px;
+                }
+
+                & .gatsby-image-wrapper.statistic-image-02 {
+                    position: absolute !important;
+                    bottom: 0;
+                    width: 140px;
+                    right: 0;
+                }
+
+                & .gatsby-image-wrapper.statistic-image-03 {
+                    height: 90px;
+                    width: 130px;
+                    @include border-radius-set('bottom', 0, 10px);
+                    @include border-radius-set('top', 0, 10px);
+                }
+
+                & .gatsby-image-wrapper.statistic-image-05 {
+                    height: 90px;
+                    @include border-radius-set('bottom', 0, 10px);
+                    @include border-radius-set('top', 0, 10px);
+                }
+            }
+        }
+    }
+}

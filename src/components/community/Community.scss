@@ -1,0 +1,83 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-community {
+    position: relative;
+    @include padding-set(80px, 0, 100px, 0);
+    @include flex-set(flex, center, center);
+
+    &:after, &:before {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: 50% 50% !important;
+    }
+
+    &--overlay {
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        mix-blend-mode: multiply;
+        background-color: $color-grey-20;
+    }
+    
+    h5 {
+        text-align: center;
+        color: $color-white;
+        @include margin-set(0, auto, 64px, auto);
+        @include font-set(32px, $typography-weight-bold, 38px);
+    }
+
+    a {
+        border-radius: 10px;
+        display: table;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        background-color: $color-primary-20;
+        @include margin-set(0, auto, 24px, auto);
+        @include padding-set(16px, 24px, 16px, 24px);
+        @include font-set(16px, $typography-weight-semibold, 22px);
+    }
+
+    @include tablet-only {
+        @include padding-set(64px, 32px, 64px, 32px);
+        
+        h5 {
+            width: 700px;
+            @include margin-set(0, auto, 32px, auto);
+            @include font-set(18px, $typography-weight-bold, 24px);
+        }
+        
+        a {
+            @include padding-set(16px, 16px, 16px, 16px);
+            @include font-set(12px, $typography-weight-semibold, 18px);
+        }
+    }
+    
+    @include mobile {
+        @include padding-set(64px, 32px, 64px, 32px);
+
+        h5 {
+            width: 100%;
+            @include margin-set(0, auto, 24px, auto);
+            @include font-set(16px, $typography-weight-bold, 22px);
+        }
+
+        a {
+            @include padding-set(16px, 16px, 16px, 16px);
+            @include font-set(12px, $typography-weight-semibold, 18px);
+        }
+    }
+}

@@ -1,0 +1,369 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-topbar {
+    height: 96px;
+    z-index: $zindex-30;
+    background-color: $color-black;
+    @include position-set(fixed, 0, 0, null, 0);
+    @include flex-set(flex, space-between, center);
+
+    &--show {
+        .#{$ns}-topbar--menu {
+            transform: translateX(0px);
+        }
+
+        .#{$ns}-topbar--menu--button {
+            opacity: 1 !important;
+        }
+    }
+
+    &--wrapper {
+        @include flex-set(flex, space-between, center);
+    }
+
+    &--brand {
+        .gatsby-image-wrapper {
+            width: 192px;
+        }
+    }
+
+    &--toggle {
+        height: 14px;
+        display: none;
+        flex-direction: column;
+        position: relative;
+        @include flex-set(null, space-between, center);
+
+        span {
+            width: 22px;
+            height: 2px;
+            display: block;
+            background-color: $color-white;
+        }
+    }
+
+    &--menu {
+        transform: translateX(248px);
+        transition: all $animation-speed-normal;
+        
+        &--dropdown {
+            float: left;
+            overflow: hidden;
+            @include padding-set(32px, 16px, 32px, 16px);
+
+            button {
+                position: relative;
+                cursor: pointer;
+                background-color: inherit;
+                text-decoration: none;
+                border-bottom: 1px solid;
+                border-color: $color-black;
+                color: $color-white;
+                transition: border-color $animation-speed-normal;
+                @include margin-set(0, 0, 0, 0);
+                @include padding-set(4px, 24px, 4px, 4px);
+                @include font-set(16px, $typography-weight-medium, 22px);
+
+                &:hover {
+                    border-bottom: 1px solid;
+                    border-color: $color-white;
+                }
+
+                span {
+                    content: '';
+                    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 16 16' enable-background='new 0 0 16 16' xml:space='preserve'%3E%3Cg id='chevron_down'%3E%3Cg%3E%3Cpath fill-rule='evenodd' fill='%23FFFFFF' clip-rule='evenodd' d='M12,5c-0.28,0-0.53,0.11-0.71,0.29L8,8.59L4.71,5.29C4.53,5.11,4.28,5,4,5 C3.45,5,3,5.45,3,6c0,0.28,0.11,0.53,0.29,0.71l4,4C7.47,10.89,7.72,11,8,11s0.53-0.11,0.71-0.29l4-4C12.89,6.53,13,6.28,13,6 C13,5.45,12.55,5,12,5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+                    @include size-set(20px, 20px);
+                    @include position-set(absolute, 4px, 0px, null, null);
+                }
+            }
+
+            button.#{$ns}-topbar--menu--active {
+                border-bottom: 1px solid;
+                border-color: $color-white;
+                @include font-set(16px, $typography-weight-bold, 22px);
+            }
+            
+            &--content {
+                min-width: 160px;
+                border-radius: 20px;
+                display: none;
+                position: absolute;
+                z-index: $zindex-20;
+                background-color: $color-black;
+                @include margin-set(36px, 0, 0, 0);
+                @include padding-set(24px, 24px, 24px, 24px);
+
+                a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                    text-decoration: none;
+                    color: $color-white;
+                    @include padding-set(null, null, 4px, null);
+                    @include font-set(16px, $typography-weight-medium, 22px);
+                }
+
+                &--show {
+                    display: block;
+                }
+            }
+        }
+
+        ul {
+            margin: 0;
+            @include flex-set(flex, null, center);
+
+            li {
+                @include padding-set(32px, 16px, 32px, 16px);
+                text-align: center;
+
+                a {
+                    border-bottom: 1px solid;
+                    text-decoration: none;
+                    border-color: $color-black;
+                    color: $color-white;
+                    transition: border-color $animation-speed-normal;
+                    @include padding-set(null, null, 4px, null);
+                    @include font-set(16px, $typography-weight-medium, 22px);
+                    
+                    &:hover {
+                        border-bottom: 1px solid;
+                        border-color: $color-white;
+                    }
+                }
+            }
+
+            li a.#{$ns}-topbar--menu--active {
+                border-bottom: 1px solid;
+                border-color: $color-white;
+                @include font-set(16px, $typography-weight-bold, 22px);
+            }
+
+            li:last-child {
+                @include padding-set(10px, 16px, 10px, 16px);
+            }
+        }
+
+        .#{$ns}-topbar--menu--button {
+            opacity: 0;
+            height: auto;
+            // height: 48px;
+            text-align: center;
+            border-radius: 10px;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-black;
+            background-color: $color-primary-20;
+            transition: all $animation-speed-normal;
+            @include padding-set(12px, 24px, 12px, 24px);
+            @include font-set(16px, $typography-weight-semibold, 22px);
+        }
+    }
+
+    @include until-widescreen {
+        @include padding-set(32px, 32px, 32px, 32px);
+
+        &--brand {
+            img {
+                width: 160px;
+            }
+        }
+
+        &--show {
+            .#{$ns}-topbar--menu {
+                transform: translateX(248px);
+            }
+        }
+
+        &--toggle {
+            display: flex;
+        }
+
+        &--menu {
+            display: none;
+
+            &--show {
+                top: 60px;
+                left: -258px;
+                display: block;
+                position: absolute;
+            }
+
+            &--dropdown {
+               @include padding-set(24px, 24px, 24px, 24px);
+
+                button {
+                    @include font-set(18px, $typography-weight-medium, 24px);
+
+                    &:hover {
+                        border-bottom: 1px solid;
+                        border-color: $color-white;
+                    }
+                }
+
+                button.#{$ns}-topbar--menu--active {
+                    @include font-set(18px, $typography-weight-medium, 24px);
+                }
+                
+                &--content {
+                    @include margin-set(24px, 0, 0, 0);
+                    @include padding-set(0, 24px, 0, 24px);
+
+                    a {
+                        @include padding-set(16px, 16px, 16px, 16px);
+                        @include font-set(14px, $typography-weight-medium, 20px);
+                    }
+
+                    &--show {
+                        position: relative;
+                        display: block;
+                    }
+                }
+            }
+
+            ul {
+                flex-direction: column;
+                align-items: flex-start;
+
+                li {
+                    @include padding-set(24px, 24px, 24px, 24px);
+
+                    a {
+                        @include font-set(18px, $typography-weight-medium, 24px);
+                    }
+                }
+
+                li a.#{$ns}-topbar--menu--active {
+                    @include font-set(18px, $typography-weight-bold, 24px);
+                }
+                
+                li:last-child {
+                    display: block;
+
+                    a {
+                        @include font-set(18px, $typography-weight-semibold, 24px);
+                    }
+                }
+
+                .#{$ns}-topbar--menu--button {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &--active {
+            height: 100vh;
+            display: block;
+            background-color: $color-black;
+        }
+    }
+
+    @include tablet-only {
+        &--menu {
+            &--dropdown {
+               @include padding-set(16px, 16px, 16px, 16px);
+
+                button {
+                    @include font-set(16px, $typography-weight-medium, 22px);
+                }
+
+                button.#{$ns}-topbar--menu--active {
+                    @include font-set(16px, $typography-weight-semibold, 18px);
+                }
+                
+                &--content {
+                    @include margin-set(16px, 0, 0, 0);
+                    @include padding-set(0, 16px, 0, 16px);
+
+                    a {
+                        @include font-set(16px, $typography-weight-medium, 22px);
+                    }
+                }
+            }
+
+            ul {
+                li {
+                    @include padding-set(16px, 16px, 16px, 16px);
+
+                    a {
+                       @include font-set(16px, $typography-weight-medium, 22px);
+                    }
+                }
+
+                li a.#{$ns}-topbar--menu--active {
+                    @include font-set(16px, $typography-weight-medium, 22px);
+                }
+
+                li:last-child {
+                    a {
+                        @include padding-set(16px, 16px, 16px, 16px);
+                        @include font-set(16px, $typography-weight-semibold, 18px);
+                    }
+                }
+
+                .#{$ns}-topbar--menu--button {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &--menu {
+            &--dropdown {
+               @include padding-set(16px, 16px, 16px, 16px);
+
+                button {
+                    @include font-set(14px, $typography-weight-medium, 20px);
+                }
+
+                button.#{$ns}-topbar--menu--active {
+                    @include font-set(14px, $typography-weight-medium, 20px);
+                }
+                
+                &--content {
+                    @include margin-set(16px, 0, 0, 0);
+                    @include padding-set(0, 16px, 0, 16px);
+
+                    a {
+                        @include font-set(14px, $typography-weight-medium, 20px);
+                    }
+                }
+            }
+
+            ul {
+                li {
+                    @include padding-set(16px, 16px, 16px, 16px);
+
+                    a {
+                       @include font-set(14px, $typography-weight-medium, 20px);
+                    }
+                }
+
+                li a.#{$ns}-topbar--menu--active {
+                    @include font-set(14px, $typography-weight-medium, 20px);
+                }
+
+                li:last-child {
+                    a {
+                        @include padding-set(16px, 16px, 16px, 16px);
+                        @include font-set(12px, $typography-weight-semibold, 18px);
+                    }
+                }
+
+                .#{$ns}-topbar--menu--button {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

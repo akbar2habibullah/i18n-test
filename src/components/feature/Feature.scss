@@ -1,0 +1,241 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-feature {
+    text-align: center;
+    background-color: $color-primary-20;
+    @include padding-set(100px, 0, 100px, 0);
+
+    h2 {
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, 0, 170px, 0);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+    
+    &--item {
+        position: relative;
+        height: 300px;
+        border-radius: 20px;
+        background-color: $color-white;
+        @include padding-set(16px, 60px, 16px, 60px);
+        @include margin-set(0, 0, 120px, 0);
+        @include flex-set(flex, flex-start, center);
+        
+        &.#{$ns}-feature--item--reverse {
+            .#{$ns}-feature--item--meta {
+                @include margin-set(0, 0, 0, 620px);
+            }
+        }
+
+        .gatsby-image-wrapper {
+            position: absolute !important;
+            width: 100%;
+            top: -100px;
+            left: 0;
+        }
+
+        &--meta {
+            z-index: $zindex-20;
+
+            & h3 {
+                width: 500px;
+                text-align: left;
+                text-transform: uppercase;
+                color: $color-black;
+                @include margin-set(0, 0, 24px, 0);
+                @include font-set(28px, $typography-weight-regular, 34px);
+                
+                b {
+                    @include font-set(28px, $typography-weight-bold, 34px);
+                }
+            }
+            
+            & ul {
+                z-index: $zindex-20;
+
+                li {
+                    position: relative;
+                    text-align: left;
+                    text-transform: uppercase;
+                    color: $color-black;
+                    @include margin-set(0, 0, 12px, 40px);
+                    @include padding-set(0, 0, 0, 0);
+                    @include font-set(18px, $typography-weight-semibold, 24px);
+                    
+                    &:last-child {
+                        @include margin-set(0, 0, 0, 40px);
+                    }
+    
+                    &:before {
+                        content: '';
+                        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='%230088FF'/%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='2' y='2' width='20' height='20'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3C/g%3E%3C/svg%3E%0A");
+                        @include size-set(24px, 24px);
+                        @include position-set(absolute, 0, null, null, -40px);
+                    }
+                }
+            }
+        }
+    }
+
+    .columns .column:nth-child(7) .#{$ns}-feature--item {
+        @include margin-set(0, 0, 0, 0);
+    }
+
+    @include widescreen-only {
+        h2 {
+            @include margin-set(0, 0, 150px, 0);
+        }
+        
+        &--item {
+            height: 280px;
+            
+            &.#{$ns}-feature--item--reverse {
+                .#{$ns}-feature--item--meta {
+                    @include margin-set(0, 0, 0, 560px);
+                }
+            }
+
+            .gatsby-image-wrapper {
+                position: absolute !important;
+                width: 100%;
+                top: -93px;
+                left: 0;
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--item {
+            height: 218px;
+            @include margin-set(0, 0, 100px, 0);
+            
+            &.#{$ns}-feature--item--reverse {
+                .#{$ns}-feature--item--meta {
+                    @include margin-set(0, 0, 0, 450px);
+                }
+            }
+
+            .gatsby-image-wrapper {
+                position: absolute !important;
+                width: 100%;
+                top: -93px;
+                left: 0;
+            }
+
+            &--meta {
+                & h3 {
+                    width: 430px;
+                    @include margin-set(0, 0, 16px, 0);
+                    @include font-set(24px, $typography-weight-regular, 30px);
+                    
+                    b {
+                        @include font-set(24px, $typography-weight-bold, 30px);
+                    }
+                }
+                
+                & ul {
+                    z-index: $zindex-20;
+
+                    li {
+                        width: 390px;
+                        @include margin-set(0, 0, 8px, 40px);
+                        @include font-set(16px, $typography-weight-semibold, 22px);
+                    }
+                }
+            }
+        }
+    }
+
+    @include touch {
+        @include padding-set(64px, 32px, 16px, 32px);
+
+        h2 {
+            @include margin-set(0, auto, 0, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        &--mobile {
+            background-color: $color-primary-20;
+            @include padding-set(0, 0, 100px, 0);
+            
+            &--item {
+                @include margin-set(0, 24px, 0, 24px);
+                
+                &--meta {
+                    height: 220px;
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    background-color: $color-white;
+                    @include padding-set(8px, 24px, 24px, 24px);
+
+                    & h3 {
+                        text-align: left;
+                        text-transform: uppercase;
+                        color: $color-black;
+                        @include margin-set(0, 0, 10px, 0);
+                        @include font-set(16px, $typography-weight-regular, 22px);
+                        
+                        b {
+                            @include font-set(16px, $typography-weight-bold, 22px);
+                        }
+                    }
+                    
+                    & ul {
+                        li {
+                            position: relative;
+                            text-align: left;
+                            text-transform: uppercase;
+                            color: $color-black;
+                            @include margin-set(0, 0, 6px, 40px);
+                            @include font-set(14px, $typography-weight-semibold, 20px);
+            
+                            &:before {
+                                content: '';
+                                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='%230088FF'/%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='2' y='2' width='20' height='20'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7046 8.3945L10.9206 13.3635L9.2876 11.2775C8.9476 10.8415 8.3176 10.7655 7.8836 11.1065C7.4486 11.4465 7.3716 12.0755 7.7126 12.5095L10.1436 15.6165C10.3336 15.8585 10.6236 15.9995 10.9316 15.9995H10.9386C11.2476 15.9985 11.5396 15.8525 11.7266 15.6055L16.2956 9.6055C16.6306 9.1655 16.5456 8.5395 16.1056 8.2045C15.6646 7.8695 15.0386 7.9555 14.7046 8.3945ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM12 2C6.477 2 2 6.478 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.478 17.523 2 12 2Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3C/g%3E%3C/svg%3E%0A");
+                                @include size-set(24px, 24px);
+                                @include position-set(absolute, 0, null, null, -40px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .slick-dots {
+                bottom: -42px;
+            }
+            
+            & .slick-dots li {
+                opacity: 1 !important;
+                padding: 0 !important;
+                border-radius: 8px !important;
+                background-color: $color-white !important;
+                @include size-set(12px, 12px);
+                @include margin-set(0, 4px, 0, 0);
+
+                & button:before {
+                    content: '' !important;
+                }
+            }
+
+            & .slick-dots li.slick-active {
+                opacity: 1 !important;
+                padding: 0 !important;
+                border-radius: 8px !important;
+                background-color: $color-black !important;
+                @include size-set(12px, 12px);
+
+                & button:before {
+                    content: '' !important;
+                }
+            }
+        }
+    }
+}

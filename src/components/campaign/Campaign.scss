@@ -1,0 +1,126 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-campaign {
+    background-color: $color-primary-20;
+    @include padding-set(100px, 0, 100px, 0);
+
+    & .gatsby-image-wrapper {
+        width: 526px;
+        @include margin-set(0, auto, 24px, auto);
+        display: block;
+    }
+
+    h2 {
+        width: 900px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, auto, 100px, auto);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+
+    &--item {
+        height: 790px;
+        border-radius: 20px;
+        background-color: $color-primary-10;
+        @include padding-set(50px, 66px, 50px, 66px);
+        
+        &:after, &:before {
+            border-radius: 20px !important;
+            background-size: 530px auto !important;
+            background-position: 100% 100% !important;
+            z-index: 10 !important;
+        }
+
+        & p {
+            position: absolute;
+            z-index: 11;
+            text-transform: uppercase;
+            color: $color-black;
+            @include font-set(32px, $typography-weight-regular, 38px);
+            
+            b {
+                @include font-set(32px, $typography-weight-bold, 38px);
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--item {
+            &:after, &:before {
+                background-size: 430px auto !important;
+            }
+        }
+    }
+
+    @include touch {
+        @include padding-set(64px, 32px, 64px, 32px);
+
+        & .gatsby-image-wrapper {
+            width: 240px;
+            @include margin-set(0, auto, 24px, auto);
+        }
+
+        h2 {
+            width: 100%;
+            @include margin-set(0, auto, 48px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        &--item {
+            height: 420px;
+            @include padding-set(30px, 26px, 30px, 26px);
+            
+            &:after, &:before {
+                background-size: 280px auto !important;
+            }
+
+            & p {
+                text-transform: uppercase;
+                color: $color-black;
+                @include font-set(18px, $typography-weight-regular, 24px);
+                
+                b {
+                    @include font-set(18px, $typography-weight-bold, 24px);
+                }
+            }
+        }
+
+        & .slick-dots {
+            bottom: -32px;
+        }
+
+        & .slick-dots li {
+            opacity: 1 !important;
+            padding: 0 !important;
+            border-radius: 8px !important;
+            background-color: $color-white !important;
+            @include size-set(12px, 12px);
+            @include margin-set(0, 4px, 0, 0);
+
+            & button:before {
+                content: '' !important;
+            }
+        }
+
+        & .slick-dots li.slick-active {
+            opacity: 1 !important;
+            padding: 0 !important;
+            border-radius: 8px !important;
+            background-color: $color-black !important;
+            @include size-set(12px, 12px);
+
+            & button:before {
+                content: '' !important;
+            }
+        }
+    }
+}

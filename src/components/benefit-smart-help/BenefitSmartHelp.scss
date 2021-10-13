@@ -1,0 +1,308 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-smart-benefit {
+    text-align: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, $color-white, $color-white 50%, $color-primary-20 50%);
+    @include padding-set(100px, 0, 160px, 0);
+
+    h5 {
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, 0, 100px, 0);
+        @include font-set(42px, $typography-weight-bold, 48px);
+
+        &:before {
+            content: '';
+            display: block;
+            height: 136px;
+            margin: -136px 0 0;
+        }
+    }
+
+    &--item {
+        @include margin-set(244px, auto, 0, auto);
+        .gatsby-image-wrapper-constrained {
+            display: block;
+        }
+
+        & h6 {
+            width: 220px;
+            text-align: center;
+            text-transform: uppercase;
+            color: $color-black;
+            @include margin-set(0, auto, 24px, auto);
+            @include font-set(18px, $typography-weight-bold, 24px);
+        }
+
+        & p {
+            text-align: center;
+            color: $color-black;
+            @include margin-set(0, auto, 0, auto);
+            @include font-set(18px, $typography-weight-regular, 24px);
+        }
+    }
+
+    .slick-dots {
+        bottom: -60px !important;
+    }
+
+    & .slick-dots li {
+        opacity: 1 !important;
+        padding: 0 !important;
+        border-radius: 12px !important;
+        background-color: $color-white !important;
+        @include size-set(16px, 16px);
+        @include margin-set(0, 8px, 0, 0);
+        
+        & button:before {
+            content: '' !important;
+        }
+    }
+
+    & .slick-dots li.slick-active {
+        opacity: 1 !important;
+        padding: 0 !important;
+        border-radius: 12px !important;
+        background-color: $color-black !important;
+        @include size-set(16px, 16px);
+
+        & button:before {
+            content: '' !important;
+        }
+    }
+
+    @include touch {
+        @include padding-set(64px, 0, 100px, 0);
+
+        h5 {
+            @include padding-set(0, 32px, 16px, 32px);
+            @include margin-set(0, auto, 0, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        &--item {
+            & h6 {
+                width: 220px;
+                text-align: center;
+                text-transform: uppercase;
+                color: $color-black;
+                @include margin-set(0, auto, 24px, auto);
+                @include font-set(18px, $typography-weight-bold, 24px);
+            }
+
+            & p {
+                text-align: center;
+                color: $color-black;
+                @include padding-set(0, 32px, 0, 32px);
+                @include font-set(14px, $typography-weight-regular, 20px);
+            }
+        }
+
+        & .slick-dots {
+            bottom: -60px;
+        }
+
+        & .slick-dots li {
+            border-radius: 8px !important;
+            @include size-set(12px, 12px);
+        }
+
+        & .slick-dots li.slick-active {
+            border-radius: 8px !important;
+            @include size-set(12px, 12px);
+        }
+    }
+}
+
+.#{$ns}-smart-benefit {
+    &--item {
+        & .gatsby-image-wrapper.smart-benefit-image-01 {
+            position: absolute !important;
+            top: 40px;
+            width: 250px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+
+        & .gatsby-image-wrapper.smart-benefit-image-02 {
+            position: absolute !important;
+            top: 40px;
+            width: 220px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+
+        & .gatsby-image-wrapper.smart-benefit-image-03 {
+            position: absolute !important;
+            top: 40px;
+            width: 240px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+
+        & .gatsby-image-wrapper.smart-benefit-image-04 {
+            position: absolute !important;
+            top: 40px;
+            width: 250px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+
+        & .gatsby-image-wrapper.smart-benefit-image-05 {
+            position: absolute !important;
+            top: 40px;
+            width: 220px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+
+        & .gatsby-image-wrapper.smart-benefit-image-06 {
+            position: absolute !important;
+            top: 40px;
+            width: 220px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+    }
+
+    @include widescreen-only {
+        &--item {
+            & .gatsby-image-wrapper.smart-benefit-image-01 {
+                position: absolute !important;
+                top: 40px;
+                width: 250px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-02 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-03 {
+                position: absolute !important;
+                top: 40px;
+                width: 240px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-04 {
+                position: absolute !important;
+                top: 40px;
+                width: 250px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-05 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-06 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--item {
+            & .gatsby-image-wrapper.smart-benefit-image-01 {
+                position: absolute !important;
+                top: 40px;
+                width: 250px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-02 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-03 {
+                position: absolute !important;
+                top: 40px;
+                width: 240px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-04 {
+                position: absolute !important;
+                top: 40px;
+                width: 250px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-05 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-06 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, auto, 32px, auto);
+            }
+        }
+    }
+
+    @include touch {
+        &--item {
+            & .gatsby-image-wrapper.smart-benefit-image-01 {
+                position: absolute !important;
+                top: 70px;
+                width: 240px;
+                @include margin-set(0, 50px, 32px, 50px);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-02 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, 50px, 32px, 70px);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-03 {
+                position: absolute !important;
+                top: 40px;
+                width: 240px;
+                @include margin-set(0, 50px, 32px, 70px);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-04 {
+                position: absolute !important;
+                top: 40px;
+                width: 250px;
+                @include margin-set(0, 50px, 32px, 50px);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-05 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, 50px, 32px, 80px);
+            }
+
+            & .gatsby-image-wrapper.smart-benefit-image-06 {
+                position: absolute !important;
+                top: 40px;
+                width: 220px;
+                @include margin-set(0, 50px, 32px, 80px);
+            }
+        }
+    }
+}

@@ -1,0 +1,285 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-build-distributor {
+    text-align: center;
+
+    @include padding-set(100px, 0, 100px, 0);
+    & .container {
+        padding: 0 60px;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        color: $color-black;
+        max-width: 850px;
+        margin: auto;
+        @include margin-set(0, auto, 140px, auto);
+        @include font-set(42px, $typography-weight-bold, 48px);
+
+        &:before {
+            content: '';
+            display: block;
+            height: 136px;
+            margin: -136px 0 0;
+        }
+    }
+
+    &--item {
+        @include margin-set(20px, auto, 0, auto);
+
+        & h3 {
+            text-align: left;
+            text-transform: uppercase;
+            color: $color-black;
+            max-width: 430px;
+            @include font-set(32px, $typography-weight-bold, 42px);
+        }
+
+        & p {
+            text-align: left;
+            color: $color-black;
+            @include margin-set(20px, 0, 0, 0);
+            @include font-set(24px, $typography-weight-regular, 30px);
+        }
+        & .is-reverse{
+            max-width: 450px;
+            margin-left: auto;
+            padding-left: 20px;
+        }
+
+        & .image-build {
+            top: -60px;
+            max-width: 450px;
+            left: 40px;
+            &.reverse {
+                left: -30px;
+                margin-right: auto;
+            }
+        }
+
+        & .list {
+            @include font-set(24px, $typography-weight-regular, 28px);
+            text-align: left;
+
+            & ul {
+                position: relative;
+                @include margin-set(15px,0,0,50px);
+
+                & li {
+                    max-width: 450px;
+                    margin-bottom: 13px;
+                    
+                    &::before{
+                        content: '';
+                        background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.7046%208.3945L10.9206%2013.3635L9.2876%2011.2775C8.9476%2010.8415%208.3176%2010.7655%207.8836%2011.1065C7.4486%2011.4465%207.3716%2012.0755%207.7126%2012.5095L10.1436%2015.6165C10.3336%2015.8585%2010.6236%2015.9995%2010.9316%2015.9995H10.9386C11.2476%2015.9985%2011.5396%2015.8525%2011.7266%2015.6055L16.2956%209.6055C16.6306%209.1655%2016.5456%208.5395%2016.1056%208.2045C15.6646%207.8695%2015.0386%207.9555%2014.7046%208.3945ZM12%2020C7.589%2020%204%2016.411%204%2012C4%207.589%207.589%204%2012%204C16.411%204%2020%207.589%2020%2012C20%2016.411%2016.411%2020%2012%2020ZM12%202C6.477%202%202%206.478%202%2012C2%2017.522%206.477%2022%2012%2022C17.523%2022%2022%2017.522%2022%2012C22%206.478%2017.523%202%2012%202Z%22%20fill%3D%22%230088FF%22%2F%3E%0A%3Cmask%20id%3D%22mask0%22%20style%3D%22mask-type%3Aalpha%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%222%22%20y%3D%222%22%20width%3D%2220%22%20height%3D%2220%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.7046%208.3945L10.9206%2013.3635L9.2876%2011.2775C8.9476%2010.8415%208.3176%2010.7655%207.8836%2011.1065C7.4486%2011.4465%207.3716%2012.0755%207.7126%2012.5095L10.1436%2015.6165C10.3336%2015.8585%2010.6236%2015.9995%2010.9316%2015.9995H10.9386C11.2476%2015.9985%2011.5396%2015.8525%2011.7266%2015.6055L16.2956%209.6055C16.6306%209.1655%2016.5456%208.5395%2016.1056%208.2045C15.6646%207.8695%2015.0386%207.9555%2014.7046%208.3945ZM12%2020C7.589%2020%204%2016.411%204%2012C4%207.589%207.589%204%2012%204C16.411%204%2020%207.589%2020%2012C20%2016.411%2016.411%2020%2012%2020ZM12%202C6.477%202%202%206.478%202%2012C2%2017.522%206.477%2022%2012%2022C17.523%2022%2022%2017.522%2022%2012C22%206.478%2017.523%202%2012%202Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fmask%3E%0A%3Cg%20mask%3D%22url(%23mask0)%22%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+                        position: absolute;
+                        background-size: contain;
+                        left: -35px;
+                        height: 24px;
+                        width: 24px;
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop-only {
+        @include padding-set(100px, 0, 100px, 0);
+
+        h2 {
+            text-transform: uppercase;
+            max-width: 750px;
+            @include margin-set(0, auto, 100px, auto);
+            @include font-set(33px, $typography-weight-bold, 45px);
+
+            &:before {
+                content: '';
+                display: block;
+                height: 106px;
+                margin: -136px 0 0;
+            }
+        }
+
+        &--item {
+            @include margin-set(20px, auto, 0, auto);
+
+            & h3 {
+                max-width: 330px;
+                @include font-set(24px, $typography-weight-bold, 34px);
+            }
+
+            & p {
+                @include font-set(18px, $typography-weight-regular, 24px);
+            }
+            & .is-reverse{
+                max-width: 350px;
+            }
+
+            & .image-build {
+                top: -60px;
+                max-width: 350px;
+            }
+
+            & .list {
+                @include margin-set(0, 0, 0, 0);
+                @include font-set(18px, $typography-weight-regular, 24px);
+                text-align: left;
+
+                & ul {
+                    @include margin-set(8px,0,0,35px);
+                    & li {
+                        max-width: 350px;
+                        margin-bottom: 8px;
+                        &::before{
+                            left: -25px;
+                            height: 18px;
+                            width: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet-only {
+        @include padding-set(100px, 0, 100px, 0);
+
+        & .container {
+            padding: 0 20px;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            max-width: 750px;
+            @include margin-set(0, auto, 100px, auto);
+            @include font-set(33px, $typography-weight-bold, 45px);
+
+            &:before {
+                content: '';
+                display: block;
+                height: 106px;
+                margin: -136px 0 0;
+            }
+        }
+
+        &--item {
+            @include margin-set(20px, auto, 0, auto);
+
+            & h3 {
+                max-width: 330px;
+                @include font-set(24px, $typography-weight-bold, 34px);
+            }
+
+            & p {
+                @include font-set(18px, $typography-weight-regular, 24px);
+            }
+
+            & .image-build {
+                top: -60px;
+                max-width: 350px;
+                left: 0;
+
+                &.reverse {
+                    left: 0;
+                }
+            }
+
+            & .list {
+                @include margin-set(0, 0, 0, 0);
+                @include font-set(18px, $typography-weight-regular, 24px);
+                text-align: left;
+
+                & ul {
+                    @include margin-set(5px,0,0,35px);
+
+                    & li {
+                        max-width: 350px;
+                        margin-bottom: 5px;
+                        &::before{
+                            left: -30px;
+                            height: 18px;
+                            width: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        @include padding-set(100px, 0, 100px, 0);
+
+        & .container {
+            padding: 0;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            max-width: 340px;
+            @include margin-set(0, auto, 0, auto);
+            @include font-set(24px, $typography-weight-bold, 27px);
+
+            &:before {
+                content: '';
+                display: block;
+                height: 96px;
+                margin: -136px 0 0;
+            }
+        }
+
+        &--item {
+            & .content {
+                margin: 0 22px;
+            }
+
+            & h3 {
+                max-width: 270px;
+                @include font-set(16px, $typography-weight-bold, 26px);
+            }
+
+            & p {
+                @include font-set(14px, $typography-weight-regular, 20px);
+                margin: 0;
+                margin-bottom: 5px !important;
+            }
+            & .image-build {
+                @include margin-set(20px, auto, 20px, auto);
+                top: 0;
+                max-width: 289px;
+                left: 0;
+                &.reverse {
+                    left: 0;
+                }
+            }
+
+            & .list {
+                @include margin-set(0, 0, 0, 0);
+                @include font-set(14px, $typography-weight-regular, 20px);
+
+                & ul {
+                    @include margin-set(0,0,0,20px);
+                    list-style: none;
+
+                    & li {
+                        max-width: max-content;
+                        margin-bottom: 0;
+                        
+                        &::before{
+                            height: 14px;
+                            width: 14px;
+                            left: -20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

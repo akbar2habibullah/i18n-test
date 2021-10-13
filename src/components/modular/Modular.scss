@@ -1,0 +1,116 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-modular {
+    position: relative;
+    height: 1000px;
+    @include padding-set(100px, 0, 100px, 0);
+
+    &:after, &:before {
+        background-color: $color-white !important;
+        background-repeat: no-repeat !important;
+        background-position: 50% 100% !important;
+        background-size: contain !important;
+    }
+
+    .container {
+        position: initial;
+    }
+
+    .gatsby-image-wrapper {
+        position: absolute !important;
+        bottom: -146px;
+        left: 0;
+        right: 0;
+        width: 60vw;
+        @include margin-set(0, auto, 0, auto);
+    }
+
+    h2 {
+        width: 700px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, auto, 34px, auto);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+    
+    p {
+        width: 960px;
+        text-align: center;
+        color: $color-black;
+        @include margin-set(0, auto, 46px, auto);
+        @include font-set(28px, $typography-weight-medium, 34px);
+    }
+
+    @media screen and (min-width: 1440px) {
+        .gatsby-image-wrapper {
+            width: 56vw;
+        }
+    }
+
+    @media screen and (max-width: 1440px) {
+        .gatsby-image-wrapper {
+            width: 74vw;
+        }
+    }
+
+    @include tablet-only {
+        height: 700px;
+        @include padding-set(64px, 32px, 64px, 32px);
+
+        &:after, &:before {
+            background-position: 0% 100% !important;
+            background-size: contain !important;
+        }
+
+        .gatsby-image-wrapper {
+            bottom: -106px;
+        }
+
+        h2 {
+            width: 100%;
+            @include margin-set(0, auto, 16px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+        
+        p {
+            width: 100%;
+            @include margin-set(0, auto, 12px, auto);
+            @include font-set(16px, $typography-weight-medium, 22px);
+        }
+    }
+
+    @include mobile {
+        height: 460px;
+        @include padding-set(64px, 32px, 64px, 32px);
+
+        &:after, &:before {
+            background-position: 0% 100% !important;
+            background-size: contain !important;
+        }
+
+        .gatsby-image-wrapper {
+            bottom: -36px;
+        }
+
+        h2 {
+            width: 100%;
+            @include margin-set(0, auto, 16px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+        
+        p {
+            width: 100%;
+            @include margin-set(0, auto, 12px, auto);
+            @include font-set(16px, $typography-weight-medium, 22px);
+        }
+    }
+}

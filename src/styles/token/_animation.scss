@@ -1,0 +1,13 @@
+/* Animation Variables */
+
+/* Slight */
+$animation-slight-bounce: cubic-bezier(0.34, 1.61, 0.7, 1) !default;
+$animation-slight-resistance: cubic-bezier(0.895, 0.03, 0.685, 0.22) !default;
+$animation-slight-fade: cubic-bezier(0, 0, 0.2, 1) !default;
+
+/* Speed */
+$animation-speed-extrafast: 0.5s !default;
+$animation-speed-fast: 0.4s !default;
+$animation-speed-normal: 0.3s !default;
+$animation-speed-slow: 0.2s !default;
+$animation-speed-extraslow: 0.1s !default;

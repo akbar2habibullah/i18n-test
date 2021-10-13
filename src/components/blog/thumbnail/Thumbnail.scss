@@ -1,0 +1,248 @@
+.apl-blog-content {
+	@include padding-set(100px, 0, 100px, 0);
+
+	@include mobile {
+        @include padding-set(60px, 32px, 60px, 32px);
+	}
+}
+
+.apl-blog-thumbnail {
+    &-releted {
+        border-top: 1px solid #B3B3B3;
+        @include margin-set(100px, 0, 0, 0);
+
+        h4 {
+            @include margin-set(50px, 0, 40px, 0);
+            @include font-set(32px, $typography-weight-bold, 40px);
+        }
+    }
+
+    &-item {
+        @include margin-set(0, 0, 24px, 0);
+
+        &-wrapper {
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 240px;
+            }
+        }
+
+        &-tag {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+
+            &-list {
+                display: inline-block;
+                border-radius: 6px;
+                background-color: #000000;
+                @include margin-set(8px, 8px, 0, 0);
+                @include padding-set(8px, 8px, 8px, 8px);
+                
+                a {
+                    color: #FFFFFF;
+                    text-decoration: none;
+                    @include font-set(12px, $typography-weight-semibold, 20px);
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        &-content {
+            a {
+                color: #000000;
+                text-decoration: none;
+                
+                h5 {
+                    @include margin-set(24px, 0, 0, 0);
+                    @include font-set(24px, $typography-weight-bold, 30px);
+                }
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            
+            p {
+                color: #979797;
+                @include margin-set(8px, 0, 0, 0);
+                @include font-set(14px, $typography-weight-medium, 22px);
+            }
+        }
+
+        &.apl-blog-thumbnail-item-sticky {
+            .apl-blog-thumbnail-item-wrapper {
+                img {
+                    height: 100%;
+                }
+            }
+            
+            .apl-blog-thumbnail-item-tag {
+                bottom: 40px;
+                left: 20px;
+
+                .apl-blog-thumbnail-item-tag-list {
+                    border-radius: 10px;
+                    @include padding-set(16px, 16px, 16px, 16px);
+                    
+                    a {
+                        @include font-set(14px, $typography-weight-semibold, 22px);
+                    }
+                }
+            }
+
+            .apl-blog-thumbnail-item-content {
+                a {
+                    h5 {
+                        @include font-set(36px, $typography-weight-bold, 42px);
+                    }
+                }
+                
+                p {
+                    @include margin-set(16px, 0, 0, 0);
+                    @include font-set(16px, $typography-weight-medium, 24px);
+                }
+            }
+        }
+    }
+
+    @include touch {
+        &-releted {
+            @include margin-set(32px, 0, 0, 0);
+
+            h4 {
+                @include margin-set(32px, 0, 32px, 0);
+                @include font-set(18px, $typography-weight-bold, 26px);
+            }
+        }
+        
+        .apl-blog-thumbnail-item {
+            display: flex;
+
+            .apl-blog-thumbnail-item-wrapper {
+                position: relative;
+                width: 40%;
+
+                img {
+                    width: 100%;
+                    height: inherit;
+                }
+            }
+
+            .apl-blog-thumbnail-item-tag {
+                position: relative;
+                bottom: 20px;
+                left: 10px;
+
+                .apl-blog-thumbnail-item-list {
+                    border-radius: 6px;
+                    background-color: #000000;
+                    @include margin-set(0, 8px, 0, 0);
+                    @include padding-set(8px, 8px, 8px, 8px);
+                    
+                    a {
+                        color: #FFFFFF;
+                        text-decoration: none;
+                        @include font-set(12px, $typography-weight-semibold, 20px);
+                        
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .apl-blog-thumbnail-item-content {
+                width: 100%;
+
+                .apl-blog-thumbnail-item-tag {
+                    position: relative;
+                    bottom: 0;
+                    left: 0;
+                    @include margin-set(0, 0, 0, 16px);
+
+                    .apl-blog-thumbnail-item-tag-list {
+                        display: inline-block;
+                        border-radius: 6px;
+                        background-color: #000000;
+                        @include margin-set(0, 8px, 8px, 0);
+                        @include padding-set(4px, 4px, 4px, 4px);
+                        
+                        a {
+                            color: #FFFFFF;
+                            text-decoration: none;
+                            @include font-set(10px, $typography-weight-semibold, 16px);
+                            
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+                
+                a {
+                    color: #000000;
+                    text-decoration: none;
+                    
+                    h5 {
+                        @include margin-set(0, 0, 0, 16px);
+                        @include font-set(14px, $typography-weight-bold, 22px);
+                    }
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                
+                p {
+                    color: #979797;
+                    @include margin-set(0, 0, 0, 16px);
+                    @include font-set(12px, $typography-weight-medium, 20px);
+                }
+            }
+            
+        }
+
+        .apl-blog-thumbnail-item.apl-blog-thumbnail-item-sticky {
+            display: block;
+
+            .apl-blog-thumbnail-item-wrapper {
+                width: 100%;
+            }
+
+            .apl-blog-thumbnail-item-tag {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 10px;
+    
+                    .apl-blog-thumbnail-item-tag-list {
+                        border-radius: 6px;
+                        @include padding-set(8px, 8px, 8px, 8px);
+                        
+                        a {
+                            @include font-set(12px, $typography-weight-semibold, 20px);
+                        }
+                    }
+                }
+    
+                .apl-blog-thumbnail-item-content {
+                    a {
+                        h5 {
+                            @include margin-set(8px, 0, 0, 0);
+                            @include font-set(18px, $typography-weight-bold, 26px);
+                        }
+                    }
+                    
+                    p {
+                        @include margin-set(0, 0, 0, 0);
+                        @include font-set(14px, $typography-weight-medium, 22px);
+                    }
+                }
+        }
+    }
+}

@@ -1,0 +1,383 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-download {
+    position: relative;
+    background-color: $color-grey-10;
+    @include padding-set(100px, 0, 100px, 0);
+
+    h2 {
+        width: 490px;
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, 0, 32px, 0);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+
+    p {
+        color: $color-black;
+        @include margin-set(0, auto, 42px, auto);
+        @include font-set(20px, $typography-weight-bold, 26px);
+    }
+
+    &--other h2 {
+        color: $color-black;
+        @include margin-set(0, auto, 42px, auto);
+        @include font-set(20px, $typography-weight-bold, 26px);
+    }
+
+    &--item {
+        height: 140px;
+        border-radius: 20px;
+        position: relative;
+        @include margin-set(0, 0, 24px, 0);
+        @include padding-set(38px, 24px, 38px, 24px);
+        
+        &:after,
+        &:before {
+            background-repeat: no-repeat !important;
+            background-position: 100% 0% !important;
+            background-size: contain !important;
+            z-index: 10 !important;
+        }
+        
+        & h4 {
+            width: 226px;
+            text-transform: uppercase;
+            color: $color-white;
+            @include margin-set(0, auto, 0, 24px);
+            @include font-set(20px, $typography-weight-bold, 26px);
+        }
+    }
+
+    &--overlay {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 66%;
+        border-radius: 20px;
+        position: absolute;
+        z-index: 11;
+        background: linear-gradient(90deg, #000000 76%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.168763) 0%) !important;
+    }
+
+    &--content {
+        top: 50%;
+        left: 24%;
+        position: absolute;
+        z-index: 12;
+        transform: translate(-50%, -50%);
+    }
+
+    &--button {
+        display: flex;
+
+        a {
+            display: flex;
+            justify-content: center;
+
+            &:nth-child(1) {
+                border-radius: 10px;
+                display: inline-block;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $color-black;
+                background-color: $color-primary-20;
+                @include padding-set(16px, 24px, 16px, 24px);
+                @include font-set(16px, $typography-weight-semibold, 22px);
+            }
+        }
+        
+        img {
+            width: 184px;
+            height: 54px;
+            @include margin-set(auto, auto, auto, 16px);
+        }
+    }
+
+    &--other {
+        border-top: 2px dashed;
+        border-color: $color-black;
+        @include margin-set(64px, 0, 0, 0);
+        @include padding-set(100px, 0, 0, 0);
+
+        & h2 {
+            text-align: center;
+            text-transform: uppercase;
+            color: $color-black;
+            @include margin-set(0, auto, 100px, auto);
+            @include font-set(32px, $typography-weight-bold, 38px);
+
+            &:before {
+                content: "";
+                display: block;
+                height: 136px;
+                margin: -136px 0 0;
+            }
+        }
+
+        &--item {
+            height: 280px;
+            border-radius: 20px;
+            position: relative;
+            background-color: $color-white;
+            @include padding-set(32px, 32px, 32px, 32px);
+
+            p {
+                color: $color-black;
+                @include margin-set(88px, 0, 0, 0);
+                @include font-set(18px, null, 24px);
+            }
+        }
+    }
+
+    @include widescreen-only {
+        &--other {
+            &--item {
+                height: 320px;
+            }
+        }
+    }
+
+    @include desktop-only {
+        &--content {
+            left: 140px;
+        }
+
+        &--other {
+            &--item {
+                height: 340px;
+            }
+        }
+    }
+
+    @include tablet-only {
+        &--other {
+            &--item {
+                height: 130px !important;
+            }
+        }
+
+        &--overlay {
+            width: 78%;
+            background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.168763) 0%) !important;
+        }
+    }
+
+    @include touch {
+        @include padding-set(64px, 32px, 64px, 32px);
+
+        h2 {
+            width: 100%;
+            text-align: center;
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+        
+        p {
+            text-align: center;
+            @include font-set(16px, $typography-weight-bold, 22px);
+        }
+
+        &--item {
+            & h4 {
+                width: 130px;
+                text-align: left;
+                color: $color-white;
+                @include margin-set(0, 0, 0, 0);
+                @include font-set(16px, $typography-weight-bold, 22px);
+            }
+        }
+
+        &--content {
+            left: 90px;
+        }
+
+        &--button {
+            display: block;
+            text-align: center;
+            flex-direction: column;
+            @include margin-set(0, auto, 0, auto);
+            
+            a {
+                &:nth-child(1) {
+                    @include margin-set(16px, auto, 24px, auto);
+                    @include padding-set(16px, 16px, 16px, 16px);
+                    @include font-set(12px, $typography-weight-semibold, 18px);
+                }
+            }
+            
+            img {
+                width: 152px;
+                height: 44px;
+                @include margin-set(0, auto, 0, auto);
+            }
+        }
+
+        &--other {
+            @include margin-set(32px, 0, 0, 0);
+            @include padding-set(32px, 0, 0, 0);
+
+            & h2 {
+                @include margin-set(0, auto, 24px, auto);
+                @include font-set(20px, $typography-weight-bold, 26px);
+            }
+
+            &--item {
+                height: auto;
+                border-radius: 10px;
+                @include margin-set(32px, auto, 0, auto);
+                @include padding-set(16px, 16px, 16px, 16px);
+
+                img {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                }
+
+                p {
+                    color: $color-black;
+                    @include margin-set(42px, 0, 0, 0);
+                    @include font-set(14px, null, 20px);
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &--item {
+            background-size: cover;
+        }
+
+        &--overlay {
+            width: 78%;
+            background: linear-gradient(90deg, #000000 40%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.168763) 0%) !important;
+        }
+    }
+}
+
+.#{$ns}-download--other {
+    &--item {
+        & .gatsby-image-wrapper.download-image-01 {
+            position: absolute !important;
+            top: -38px;
+            left: 0;
+            right: 0;
+            width: 147px;
+            @include margin-set(0, auto, 0, auto);
+        }
+
+        & .gatsby-image-wrapper.download-image-02 {
+            position: absolute !important;
+            top: -38px;
+            left: 0;
+            right: 0;
+            width: 155px;
+            @include margin-set(0, auto, 0, auto);
+        }
+
+        & .gatsby-image-wrapper.download-image-03 {
+            position: absolute !important;
+            top: -38px;
+            left: 0;
+            right: 0;
+            width: 171px;
+            @include margin-set(0, auto, 0, auto);
+        }
+
+        & .gatsby-image-wrapper.download-image-04 {
+            position: absolute !important;
+            top: -38px;
+            left: 0;
+            right: 0;
+            width: 215px;
+            @include margin-set(0, auto, 0, auto);
+        }
+    }
+
+    @include desktop-only {
+        &--item {
+            & .gatsby-image-wrapper.download-image-01 {
+                position: absolute !important;
+                top: -26px;
+                left: 0;
+                right: 0;
+                width: 127px;
+                @include margin-set(0, auto, 0, auto);
+            }
+
+            & .gatsby-image-wrapper.download-image-02 {
+                position: absolute !important;
+                top: -26px;
+                left: 0;
+                right: 0;
+                width: 134px;
+                @include margin-set(0, auto, 0, auto);
+            }
+
+            & .gatsby-image-wrapper.download-image-03 {
+                position: absolute !important;
+                top: -26px;
+                left: 0;
+                right: 0;
+                width: 151px;
+                @include margin-set(0, auto, 0, auto);
+            }
+
+            & .gatsby-image-wrapper.download-image-04 {
+                position: absolute !important;
+                top: -26px;
+                left: 0;
+                right: 0;
+                width: 195px;
+                @include margin-set(0, auto, 0, auto);
+            }
+        }
+    }
+
+    @include touch {
+        &--item {
+            & .gatsby-image-wrapper.download-image-01 {
+                position: absolute !important;
+                top: -26px;
+                left: 0;
+                right: 0;
+                width: 87px;
+                @include margin-set(0, auto, 0, auto);
+            }
+
+            & .gatsby-image-wrapper.download-image-02 {
+                position: absolute !important;
+                top: -26px;
+                left: 0;
+                right: 0;
+                width: 94px;
+                @include margin-set(0, auto, 0, auto);
+            }
+
+            & .gatsby-image-wrapper.download-image-03 {
+                position: absolute !important;
+                top: -26px;
+                left: 0;
+                right: 0;
+                width: 101px;
+                @include margin-set(0, auto, 0, auto);
+            }
+
+            & .gatsby-image-wrapper.download-image-04 {
+                position: absolute !important;
+                top: -26px;
+                left: 0;
+                right: 0;
+                width: 125px;
+                @include margin-set(0, auto, 0, auto);
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+/* Mixins */
+
+@mixin color-set($color, $background-color, $border-color) {
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+}
+
+@mixin font-set($font-size, $font-weight, $line-height) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}
+
+@mixin flex-set($display, $justify-content, $align-items) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin padding-set($top, $right, $bottom, $left) {
+    padding: $top $right $bottom $left;
+}
+
+@mixin margin-set($top, $right, $bottom, $left) {
+    margin: $top $right $bottom $left;
+}
+
+@mixin size-set($width, $height) {
+    width: $width !important;
+    height: $height !important;
+}
+
+@mixin position-set($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin border-radius-set($direction, $left, $right) {
+    border-#{$direction}-left-radius: $left;
+    border-#{$direction}-right-radius: $right;
+}
+
+@mixin scrollbar-set($size, $radius, $color-track, $color-thumb) {
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $color-track; 
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: $color-thumb; 
+        border-radius: $radius;
+    }
+}

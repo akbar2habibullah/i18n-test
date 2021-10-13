@@ -1,0 +1,149 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-contact {
+    height: 500px;
+    @include flex-set(flex, center, center);
+
+    &:after, &:before {
+        background-color: $color-grey-20 !important;
+        background-repeat: no-repeat !important;
+        background-position: 90% 50% !important;
+        background-size: 630px auto !important;
+    }
+
+    &.#{$ns}-contact--fixed {
+        &:after, &:before {
+            background-color: $color-grey-20 !important;
+            background-repeat: no-repeat !important;
+            background-position: 100% 100% !important;
+            background-size: 1400px auto !important;
+        }
+    }
+
+    h2 {
+        width: 50%;
+        text-transform: uppercase;
+        color: $color-white;
+        @include margin-set(0, 0, 64px, 0);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+
+    h6 {
+        width: 50%;
+        color: $color-white;
+        @include margin-set(0, 0, 48px, 0);
+        @include font-set(24px, $typography-weight-medium, 30px);
+    }
+
+    &.#{$ns}-contact--compact {
+        &:after, &:before {
+            background-color: $color-grey-20 !important;
+            background-repeat: no-repeat !important;
+            background-position: 80% 50% !important;
+            background-size: 680px auto !important;
+        }
+
+        h2 {
+            width: 30%;
+            @include margin-set(0, 0, 14px, 0);
+        }
+
+        h6 {
+            width: 30%;
+            @include margin-set(0, 0, 48px, 0);
+        }
+    }
+
+    a {
+        border-radius: 10px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        background-color: $color-primary-20;
+        @include margin-set(0, 0, 24px, 0);
+        @include padding-set(16px, 24px, 16px, 24px);
+        @include font-set(18px, $typography-weight-semibold, 24px);
+    }
+
+    @include widescreen-only {
+        background-size: 530px auto;
+    }
+
+    @include desktop-only {
+        background-size: 530px auto;
+    }
+
+    @include tablet-only {
+        background-size: 484px auto !important;
+    }
+
+    @include touch {
+        height: 540px;
+        @include padding-set(64px, 32px, 64px, 32px);
+        @include flex-set(flex, center, flex-start);
+
+        &:after, &:before {
+            background-size: 390px auto !important;
+            background-position: 50% 96% !important;
+        }
+
+        &.#{$ns}-contact--fixed {
+            &:after, &:before {
+                background-position: 100% 100% !important;
+                background-size: 840px auto !important;
+            }
+        }
+
+        & .gatsby-image-wrapper {
+            width: 200px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+
+        h2 {
+            width: 100%;
+            text-align: center;
+            @include margin-set(0, auto, 32px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        h6 {
+            width: 100%;
+            text-align: center;
+            @include margin-set(0, 0, 48px, 0);
+            @include font-set(16px, $typography-weight-medium, 22px);
+        }
+
+        &.#{$ns}-contact--compact {
+            &:after, &:before {
+                background-position: 50% 96% !important;
+                background-size: 440px auto !important;
+            }
+
+            h2 {
+                width: 100%;
+                @include margin-set(0, 0, 24px, 0);
+            }
+
+            h6 {
+                width: 100%;
+                @include margin-set(0, 0, 24px, 0);
+            }
+        }
+        
+        a {
+            display: table;
+            @include margin-set(0, auto, 0, auto);
+            @include padding-set(16px, 16px, 16px, 16px);
+            @include font-set(12px, $typography-weight-semibold, 18px);
+        }
+    }
+}

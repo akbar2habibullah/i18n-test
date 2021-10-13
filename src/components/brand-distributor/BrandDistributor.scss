@@ -1,0 +1,153 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-branddistributor {
+    background-color: $color-grey-50;
+    @include padding-set(0, 0, 128px, 0);
+    
+    &--wrapper {
+        border-top: 2px dashed;
+        border-color: $color-black;
+    }
+    
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(100px, auto, 100px, auto);
+        @include font-set(32px, $typography-weight-bold, 38px);
+    }
+
+    p {
+        text-align: center;
+        color: $color-black;
+        @include margin-set(0, 0, 0, 0);
+        @include font-set(24px, $typography-weight-bold, 30px);
+    }
+    
+    &--item {
+        height: 600px;
+        border-radius: 20px;
+        position: relative;
+        @include padding-set(32px, 32px, 32px, 32px);
+
+        & p {
+            text-align: left;
+            color: $color-white;
+            @include font-set(20px, $typography-weight-bold, 26px);
+        }
+
+        .gatsby-image-wrapper {
+            display: block;
+            position: absolute;
+            bottom: 34px;
+            left: 34px;
+        }
+    }
+
+    &--icon {
+        flex-wrap: wrap;
+        @include flex-set(flex, center, center);
+        @include margin-set(64px, 0, 0, 0);
+
+        .gatsby-image-wrapper {
+            opacity: 65%;
+            @include margin-set(0, 32px, 48px, 0);
+            
+            img {
+                height: auto;
+                margin: 0;
+            }
+        }
+        
+        .gatsby-image-wrapper {
+            opacity: 65%;
+            @include margin-set(0, 32px, 48px, 0);
+        }
+    }
+
+    @include touch {
+        @include padding-set(0, 32px, 64px, 32px);
+
+        h2 {
+            @include margin-set(32px, auto, 32px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        p {
+            @include font-set(18px, $typography-weight-bold, 24px);
+        }
+        
+        &--item {
+            height: 320px;
+            border-radius: 8px;
+            @include padding-set(24px, 24px, 24px, 24px);
+            
+            & p {
+                @include font-set(14px, $typography-weight-bold, 20px);
+            }
+
+            .gatsby-image-wrapper {
+                display: block;
+                position: absolute;
+                bottom: 34px;
+                left: 34px;
+            }
+        }
+
+        &--icon {
+            @include margin-set(64px, 0, 0, 0);
+            
+            img {
+                opacity: 65%;
+                @include margin-set(0, 24px, 32px, 24px);
+            }
+        }
+
+        & .slick-dots li {
+            opacity: 1 !important;
+            padding: 0 !important;
+            border-radius: 8px !important;
+            background-color: $color-grey-10 !important;
+            @include size-set(12px, 12px);
+            @include margin-set(0, 8px, 0, 0);
+
+            & button:before {
+                content: '' !important;
+            }
+        }
+
+        & .slick-dots li.slick-active {
+            opacity: 1 !important;
+            padding: 0 !important;
+            border-radius: 8px !important;
+            background-color: $color-primary-20 !important;
+            @include size-set(12px, 12px);
+
+            & button:before {
+                content: '' !important;
+            }
+        }
+    }
+
+    @include mobile {
+        p {
+            @include font-set(14px, $typography-weight-bold, 20px);
+        }
+
+        &--item {
+            height: 460px !important;
+
+            & img {
+                @include padding-set(24px, 24px, 0, 0);
+            }
+        }
+    }
+}

@@ -1,0 +1,295 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-jumbotron {
+    height: 660px;
+    @include flex-set(flex, center, center);
+
+    &:after,
+    &:before {
+        background-color: $color-grey-20 !important;
+        background-repeat: no-repeat !important;
+        background-position: 90% 60% !important;
+        background-size: 780px auto !important;
+    }
+
+    h5 {
+        width: 36%;
+        text-transform: uppercase;
+        color: $color-white;
+        @include margin-set(0, 0, 64px, 0);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+
+    &--column {
+        flex-direction: column;
+        @include flex-set(flex, flex-start, flex-start);
+    }
+
+    &--button--primary {
+        border-radius: 10px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        background-color: $color-primary-20;
+        @include margin-set(0, 0, 24px, 0);
+        @include padding-set(16px, 24px, 16px, 24px);
+        @include font-set(16px, $typography-weight-semibold, 22px);
+    }
+
+    &--button--secondary {
+        border: 1px solid;
+        border-radius: 10px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-color: $color-white;
+        color: $color-white;
+        @include margin-set(0, 0, 24px, 0);
+        @include padding-set(16px, 24px, 16px, 24px);
+        @include font-set(16px, $typography-weight-semibold, 22px);
+    }
+
+    &--button--link {
+        display: block;
+        text-decoration: underline;
+        border-color: $color-white;
+        color: $color-white;
+        @include margin-set(0, 0, 0, 0);
+        @include font-set(16px, $typography-weight-bold, 22px);
+    }
+
+    p {
+        color: $color-white;
+        @include margin-set(0, 0, $spacing-size-70, 0);
+        @include font-set(14px, $typography-weight-medium, 20px);
+    }
+
+    @media screen and (min-width: 1441px) {
+        &:after,
+        &:before {
+            background-position: 72% 60% !important;
+        }
+    }
+
+    .description {
+        max-width: 400px;
+        padding-bottom: 50px;
+
+        & p {
+            @include font-set(24px, $typography-weight-regular, 30px);
+        }
+    }
+
+    @include desktop-only {
+        height: 100%;
+        @include padding-set(100px, 0, 100px, 0);
+
+        &:after,
+        &:before {
+            background-image: none !important;
+        }
+
+        h5 {
+            width: 100%;
+            text-align: center;
+            @include margin-set(0, auto, 100px, auto);
+            @include font-set(42px, $typography-weight-bold, 48px);
+        }
+
+        &--button--primary {
+            @include margin-set(0, auto, 24px, auto);
+            @include font-set(16px, $typography-weight-semibold, 22px);
+        }
+
+        &--button--secondary {
+            @include margin-set(0, auto, 24px, auto);
+            @include font-set(16px, $typography-weight-semibold, 22px);
+        }
+
+        &--button--link {
+            text-align: center;
+            @include margin-set(0, auto, 0, auto);
+            @include font-set(16px, $typography-weight-bold, 22px);
+        }
+
+        p {
+            text-align: center;
+            @include margin-set(0, auto, $spacing-size-70, auto);
+            @include font-set(14px, $typography-weight-medium, 20px);
+        }
+    }
+
+    @include touch {
+        height: 100%;
+        @include padding-set(64px, 32px, 64px, 32px);
+
+        &:after,
+        &:before {
+            background-image: none !important;
+        }
+
+        h5 {
+            width: 100%;
+            text-align: center;
+            @include margin-set(0, auto, 64px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        &--button--primary {
+            @include margin-set(0, auto, 24px, auto);
+            @include padding-set(16px, 16px, 16px, 16px);
+            @include font-set(12px, $typography-weight-semibold, 18px);
+        }
+
+        &--button--secondary {
+            @include margin-set(0, auto, 24px, auto);
+            @include padding-set(16px, 16px, 16px, 16px);
+            @include font-set(12px, $typography-weight-semibold, 18px);
+        }
+
+        &--button--link {
+            text-align: center;
+            @include margin-set(0, auto, 0, auto);
+            @include font-set(14px, $typography-weight-bold, 20px);
+        }
+
+        p {
+            text-align: center;
+            @include margin-set(0, auto, $spacing-size-70, auto);
+            @include font-set(12px, $typography-weight-medium, 18px);
+        }
+
+        & .description {
+            & p {
+                @include font-set(16px, $typography-weight-regular, 24px);
+            }
+        }
+    }
+}
+
+.#{$ns}-jumbotron-help-page {
+    @include padding-set(100px, 0, 0, 0);
+    @include flex-set(flex, center, center);
+    background-color: $color-grey-20 !important;
+    color: $color-white;
+    overflow: hidden;
+
+    & .content {
+        left: 0;
+
+        h2 {
+            color: $color-white;
+            text-transform: uppercase;
+            position: relative;
+            width: max-content;
+            @include margin-set(0, 0, 64px, 0);
+            @include font-set(45px, $typography-weight-bold, 50px);
+        }
+        & p {
+            @include font-set(24px, $typography-weight-regular, 30px);
+            @include margin-set(0, 0, 34px, 0);
+        }
+    }
+
+    & .gatsby-image-wrapper.jumbotron-image {
+        width: 800px;
+    }
+
+    &--button--primary {
+        border-radius: 10px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        background-color: $color-primary-20;
+        @include margin-set(0, 0, 100px, 0);
+        @include padding-set(16px, 24px, 16px, 24px);
+        @include font-set(16px, $typography-weight-semibold, 22px);
+    }
+
+    @include desktop-only {
+        & .content {
+            h2 {
+                @include margin-set(0, 0, 64px, 0);
+                @include font-set(40px, $typography-weight-bold, 50px);
+            }
+
+            & p {
+                @include font-set(22px, $typography-weight-regular, 30px);
+                @include margin-set(0, 0, 34px, 0);
+            }
+        }
+
+        & .gatsby-image-wrapper.jumbotron-image {
+            width: auto;
+        }
+    }
+
+    @include tablet-only {
+        & .content {
+            h2 {
+                padding: 0 20px;
+                @include margin-set(0, 0, 64px, 0);
+                @include font-set(32px, $typography-weight-bold, 40px);
+            }
+
+            & p {
+                @include font-set(18px, $typography-weight-regular, 24px);
+                @include margin-set(0, 0, 34px, 0);
+                padding: 0 20px;
+            }
+        }
+
+        & .gatsby-image-wrapper.jumbotron-image {
+            max-width: 500px;
+            width: auto;
+        }
+
+        &--button--primary {
+            @include margin-set(0, 20px, 100px, 20px);
+        }
+    }
+
+    @include mobile {
+        @include padding-set(50px, 0, 0, 0);
+        text-align: center;
+
+        & .content {
+            h2 {
+                @include margin-set(0, auto, 24px, auto);
+                width: min-content;
+                @include font-set(24px, $typography-weight-bold, 26px);
+            }
+
+            & p {
+                padding: 0 10px;
+                @include font-set(18px, $typography-weight-regular, 24px);
+                @include margin-set(0, 0, 34px, 0);
+                padding: 0 20px;
+            }
+        }
+
+        &--button--primary {
+            border-radius: 10px;
+            @include margin-set(0, 0, 24px, 0);
+            @include padding-set(14px, 22px, 14px, 22px);
+            @include font-set(13px, $typography-weight-semibold, 18px);
+        }
+
+        & .gatsby-image-wrapper.jumbotron-image {
+            max-width: 450px;
+            min-width: 340px;
+            width: auto;
+            margin: auto;
+        }
+    }
+}

@@ -1,0 +1,190 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-service {
+    text-align: center;
+    background-color: $color-primary-20;
+    @include padding-set(100px, 0, 58px, 0);
+
+    h2 {
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, 0, 32px, 0);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+
+    p, h4 {
+        width: 756px;
+        color: $color-black;
+        @include margin-set(0, auto, 64px, auto);
+        @include font-set(24px, $typography-weight-regular, 30px);
+    }
+
+    &--item {
+        border-radius: 20px;
+        position: relative;
+        flex-wrap: wrap;
+        background-color: $color-white;
+        @include flex-set(flex, center, center);
+        @include margin-set(0, 0, 32px, 0);
+        @include padding-set(42px, 64px, 42px, 64px);
+
+        & .gatsby-image-wrapper {
+            position: absolute !important;
+            top: -104px;
+            left: 64px;
+            
+            img {
+                position: absolute;
+                left: 0;
+            }
+        }
+
+        & p, h4 {
+            width: 400px;
+            text-align: left;
+            text-transform: uppercase;
+            color: $color-black;
+            @include margin-set(0, auto, 0, 450px);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        & a {
+            border-radius: 10px;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-black;
+            background-color: $color-primary-20;
+            @include padding-set(16px, 24px, 16px, 24px);
+            @include font-set(16px, $typography-weight-semibold, 20px);
+        }
+
+        &--primary {
+            min-height: 397px;
+            flex-wrap: wrap;
+            @include padding-set(42px, 64px, 42px, 64px);
+
+            & .gatsby-image-wrapper {
+                top: -44px;
+                left: 50%;
+                transform: translate(-50%, -0%);
+            }
+
+            & p, h4 {
+                width: 400px;
+                text-align: center;
+                text-transform: uppercase;
+                color: $color-black;
+                @include margin-set(126px, auto, 20px, auto);
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+        }
+    }
+
+    @include widescreen-only {
+        &--item {
+            & .gatsby-image-wrapper {
+                top: 0px;
+            }
+            
+            & a {
+                @include margin-set(38px, 0, 0, 88px);
+            }
+
+            &--primary {
+                height: 400px;
+                @include padding-set(32px, 32px, 32px, 32px);
+
+                & .gatsby-image-wrapper {
+                    top: -44px;
+                }
+
+                & a {
+                    @include margin-set(0, auto, 0, auto);
+                }
+            }
+        }
+    }
+    
+    @include desktop-only {
+        &--item {
+            & .gatsby-image-wrapper {
+                top: 0px;
+            }
+
+            & a {
+                @include margin-set(32px, 0, 0, 278px);
+            }
+            
+            &--primary {
+                height: 400px;
+                @include padding-set(32px, 32px, 32px, 32px);
+
+                & .gatsby-image-wrapper {
+                    top: -44px;
+                }
+
+                & a {
+                    @include margin-set(0, auto, 0, auto);
+                }
+            }
+        }
+    }
+
+    @include touch {
+        @include padding-set(64px, 32px, 16px, 32px);
+
+        h2 {
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+
+        p, h4 {
+            width: 100%;
+            @include margin-set(0, auto, 16px, auto);
+            @include font-set(16px, $typography-weight-regular, 20px);
+        }
+
+        &--item--mobile {
+            height: 400px;
+            border-radius: 20px;
+            flex-direction: column;
+            background-color: $color-white !important;
+            @include flex-set(flex, space-between, center);
+            @include margin-set(0, 16px, 0, 0);
+            @include padding-set(32px, 32px, 32px, 32px);
+
+            & p, h4 {
+                text-align: center;
+                text-transform: uppercase;
+                color: $color-black;
+                @include margin-set(0, auto, 0, auto);
+                @include font-set(16px, $typography-weight-bold, 20px);
+            }
+
+            & a {
+                border-radius: 10px;
+                display: inline-block;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $color-black;
+                background-color: $color-primary-20;
+                @include padding-set(16px, 16px, 16px, 16px);
+                @include font-set(12px, $typography-weight-semibold, 18px);
+            }
+        }
+    }
+}
+
+.#{$ns}-service--mobile {
+    background-color: $color-primary-20;
+    @include padding-set(0, 0, 64px, 0);
+}

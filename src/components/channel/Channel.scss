@@ -1,0 +1,111 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-channel {
+    height: 580px;
+    @include padding-set(100px, 0, 100px, 0);
+
+    &:after, &:before {
+        background-color: $color-grey-40 !important;
+        background-repeat: no-repeat !important;
+        background-position: 50% 100% !important;
+        background-size: cover !important;
+    }
+
+    &.#{$ns}-channel--secondary {
+        height: 940px;
+
+        &:after, &:before {
+            background-color: $color-grey-20 !important;
+            background-repeat: no-repeat !important;
+            background-position: 50% 100% !important;
+            background-size: contain !important;
+        }
+
+        h2 {
+            width: 100%;
+            color: $color-white;
+            @include margin-set(0, auto, 74px, auto);
+            @include font-set(42px, $typography-weight-bold, 48px);
+        }
+
+        p {
+            width: 580px;
+            color: $color-white;
+            @include margin-set(0, auto, 0, auto);
+            @include font-set(18px, $typography-weight-regular, 24px);
+        }
+    }
+
+    h2 {
+        width: 780px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-black;
+        @include margin-set(0, auto, 96px, auto);
+        @include font-set(42px, $typography-weight-bold, 48px);
+    }
+    
+    p {
+        width: 520px;
+        text-align: center;
+        color: $color-black;
+        @include margin-set(0, auto, 0, auto);
+        @include font-set(18px, $typography-weight-regular, 24px);
+    }
+
+    @media screen and (min-width: 1441px) {
+        &.#{$ns}-channel--secondary {
+            height: 90vh;
+        }
+    }
+
+    @include touch {
+        height: 550px;
+        @include padding-set(64px, 32px, 64px, 32px);
+        @include flex-set(flex, center, flex-start);
+
+        &:after, &:before {
+            background-position: 0% 100% !important;
+            background-size: contain !important;
+        }
+
+        &.#{$ns}-channel--secondary {
+            height: 600px;
+
+            &:after, &:before {
+                background-position: 50% 100% !important;
+                background-size: contain !important;
+            }
+
+            h2 {
+                width: 100%;
+                @include margin-set(0, auto, 26px, auto);
+                @include font-set(24px, $typography-weight-bold, 30px);
+            }
+
+            p {
+                width: 100%;
+                @include font-set(16px, $typography-weight-regular, 22px);
+            }
+        }
+
+        h2 {
+            width: 100%;
+            @include margin-set(0, auto, 24px, auto);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+        
+        p {
+            width: 100%;
+            @include font-set(16px, $typography-weight-medium, 22px);
+        }
+    }
+}

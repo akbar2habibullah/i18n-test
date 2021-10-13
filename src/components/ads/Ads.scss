@@ -1,0 +1,97 @@
+@import '../../styles/token/constant';
+@import '../../styles/token/mixin';
+@import '../../styles/token/color';
+@import '../../styles/token/typography';
+@import '../../styles/token/spacing';
+@import '../../styles/token/radius';
+@import '../../styles/token/elevation';
+@import '../../styles/token/animation';
+@import '../../styles/token/zindex';
+
+.#{$ns}-ads {
+    height: 800px;
+    @include flex-set(flex, center, center);
+
+    &:after, &:before {
+        background-color: $color-grey-20 !important;
+        background-repeat: no-repeat !important;
+        background-position: 100% 100% !important;
+        background-size: 740px auto !important;
+    }
+
+    & .gatsby-image-wrapper {
+        width: 400px;
+        @include margin-set(0, 0, (32px + 18px), 0);
+    }
+
+    h2 {
+        width: 50%;
+        text-transform: uppercase;
+        color: $color-white;
+        @include margin-set(0, 0, 64px, 0);
+        @include font-set(42px, $typography-weight-bold, 150%);
+        
+        & b {
+            color: $color-primary-20;
+        }
+    }
+
+    a {
+        border-radius: 10px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        background-color: $color-primary-20;
+        @include margin-set(0, 0, 24px, 0);
+        @include padding-set(16px, 24px, 16px, 24px);
+        @include font-set(16px, $typography-weight-semibold, 22px);
+    }
+
+    @include widescreen-only {
+        &:after, &:before {
+            background-size: 500px auto !important;
+        }
+    }
+
+    @include desktop-only {
+        &:after, &:before {
+            background-size: 530px auto !important;
+        }
+    }
+
+    @include tablet-only {
+        &:after, &:before {
+            background-size: 484px auto !important;
+        }
+    }
+
+    @include touch {
+        height: 750px;
+        @include padding-set(64px, 32px, 64px, 32px);
+        @include flex-set(flex, center, flex-start);
+        
+        &:after, &:before {
+            background-size: 336px auto !important;
+        }
+
+        & .gatsby-image-wrapper {
+            width: 200px;
+            @include margin-set(0, auto, 32px, auto);
+        }
+
+        h2 {
+            width: 100%;
+            text-align: center;
+            @include margin-set(0, 0, 24px, 0);
+            @include font-set(24px, $typography-weight-bold, 30px);
+        }
+        
+        a {
+            display: table;
+            @include margin-set(0, auto, 0, auto);
+            @include padding-set(16px, 16px, 16px, 16px);
+            @include font-set(12px, $typography-weight-semibold, 18px);
+        }
+    }
+}
